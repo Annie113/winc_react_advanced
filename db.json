@@ -1,6 +1,7 @@
 {
   "events": [
     {
+<<<<<<< HEAD
       "id": "1",
       "title": "React Meetup",
       "description": "Learn React and meet others!",
@@ -12,6 +13,18 @@
       "categories": [
         "tech",
         "react"
+=======
+      "id": "f1a0",
+      "title": "Guided Meditation",
+      "description": "30 min quiet-mind time",
+      "date": "2025-08-04",
+      "startTime": "20:00",
+      "endTime": "20:30",
+      "location": "Wild Lotus",
+      "image": "https://raw.githubusercontent.com/Annie113/winc_react_advanced/refs/heads/main/src/images/minfullness.jpg",
+      "categories": [
+        "meditation"
+>>>>>>> b9a96ad (update all changes)
       ]
     }
   ]
