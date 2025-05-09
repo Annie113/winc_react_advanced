@@ -11,17 +11,17 @@ import {
   Spinner,
   Center,
   SimpleGrid,
-  Button,
   Flex,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import AddEventButton from '../components/Buttons/AddEventButton'; // ✅ Imported AddEventButton
+import DeleteEventButton from '../components/Buttons/DeleteEventButton'; // ✅ Imported DeleteEventButton
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/events') // ✅ CORRECT URL
+    fetch('http://localhost:3001/events')
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
@@ -33,14 +33,17 @@ const EventsPage = () => {
       });
   }, []);
 
+  // Handle successful deletion by updating the state
+  const handleDeleteSuccess = (deletedId) => {
+    setEvents((prev) => prev.filter((event) => event.id !== deletedId));
+  };
+
   return (
     <Container maxW="1200px" mx="auto" p={6}>
       {/* Header with Add Event Button */}
       <Flex justify="space-between" align="center" mb={6}>
         <Heading>List of Events</Heading>
-        <Button as={Link} to="/add-event" colorScheme="teal">
-          Add Event
-        </Button>
+        <AddEventButton /> {/* AddEventButton */}
       </Flex>
 
       {loading ? (
@@ -80,9 +83,15 @@ const EventsPage = () => {
                 </Text>
               )}
 
-              <Text><strong>Date:</strong> {event.date}</Text>
-              <Text><strong>Time:</strong> {event.startTime} - {event.endTime}</Text>
-              <Text><strong>Location:</strong> {event.location}</Text>
+              <Text>
+                <strong>Date:</strong> {event.date}
+              </Text>
+              <Text>
+                <strong>Time:</strong> {event.startTime} - {event.endTime}
+              </Text>
+              <Text>
+                <strong>Location:</strong> {event.location}
+              </Text>
 
               {event.categories && event.categories.length > 0 && (
                 <Wrap mt={3}>
@@ -93,6 +102,14 @@ const EventsPage = () => {
                   ))}
                 </Wrap>
               )}
+
+              {/* Delete Event Button */}
+              <Flex justify="flex-end" mt={4}>
+                <DeleteEventButton
+                  eventId={event.id}
+                  onDeleteSuccess={handleDeleteSuccess}
+                />
+              </Flex>
             </Box>
           ))}
         </SimpleGrid>

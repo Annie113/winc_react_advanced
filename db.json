@@ -1,30 +1,16 @@
 {
   "events": [
     {
-<<<<<<< HEAD
-      "id": "1",
-      "title": "React Meetup",
-      "description": "Learn React and meet others!",
-      "date": "2025-06-01",
-      "startTime": "10:00",
-      "endTime": "13:00",
-      "location": "Online",
-      "image": "https://via.placeholder.com/300",
-      "categories": [
-        "tech",
-        "react"
-=======
-      "id": "f1a0",
-      "title": "Guided Meditation",
-      "description": "30 min quiet-mind time",
+      "id": "5e0d",
+      "title": "Yin - Yang Yoga",
+      "description": "Combination of Vinyasa and Yin-Yoga",
       "date": "2025-08-04",
-      "startTime": "20:00",
-      "endTime": "20:30",
+      "startTime": "09:30",
+      "endTime": "10:45",
       "location": "Wild Lotus",
-      "image": "https://raw.githubusercontent.com/Annie113/winc_react_advanced/refs/heads/main/src/images/minfullness.jpg",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/9f861f50fffc42cb043fda7d2f67c6784c9bfce0/src/images/yinyanyoga.jpg",
       "categories": [
-        "meditation"
->>>>>>> b9a96ad (update all changes)
+        "yoga"
       ]
     }
   ]
