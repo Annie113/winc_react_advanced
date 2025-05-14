@@ -16,7 +16,6 @@ import {
   Select,
   useDisclosure,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import AddEventButton from '../components/Buttons/AddEventButton';
 import DeleteEventButton from '../components/Buttons/DeleteEventButton';
 import ViewEventButton from '../components/Buttons/ViewEventButton';
