@@ -6,10 +6,10 @@ export const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Events</Link>
+          <Link to="/events">All Events</Link>
         </li>
         <li>
-          <Link to="/event/1">Event</Link>
+          <Link to="/add-event">Add New Event</Link>
         </li>
       </ul>
     </nav>

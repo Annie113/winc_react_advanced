@@ -1,27 +1,32 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { EventPage } from './pages/EventPage';
+import { HomePage } from './pages/HomePage';
 import { AddEventPage } from './pages/AddEventPage'; // ✅ imported
 import EventsPage from './pages/EventsPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Root } from './components/Root';
+import EventDetails from './pages/EventDetailPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/',             // Root path
     element: <Root />,
     children: [
       {
-        path: '/',
+        path: '',    // Explicitly define /events
+        element: <HomePage />,
+      },
+      {
+        path: 'events',    // Explicitly define /events
         element: <EventsPage />,
       },
       {
-        path: '/event/:eventId',
-        element: <EventPage />,
+        path: 'event/:eventId',  // Correct dynamic path for event detail
+        element: <EventDetails />,
       },
       {
-        path: '/add-event',         // ✅ added this route
+        path: 'add-event', // Add event path
         element: <AddEventPage />,
       },
     ],

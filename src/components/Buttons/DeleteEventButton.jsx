@@ -7,7 +7,7 @@ const DeleteEventButton = ({ eventId, onDeleteSuccess }) => {
     if (!confirm) return;
 
     try {
-      const response = await fetch(`http://localhost:3000/events/${eventId}`, {
+      const response = await fetch(`http://localhost:3001/events/${eventId}`, {
         method: 'DELETE',
       });
 

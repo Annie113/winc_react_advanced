@@ -8,7 +8,20 @@
       "startTime": "09:30",
       "endTime": "10:45",
       "location": "Wild Lotus",
-      "image": "https://github.com/Annie113/winc_react_advanced/blob/9f861f50fffc42cb043fda7d2f67c6784c9bfce0/src/images/yinyanyoga.jpg",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/yinyanyoga.jpg?raw=true",
+      "categories": [
+        "yoga"
+      ]
+    },
+    {
+      "id": "b00f",
+      "title": "Vinyasa Yoga",
+      "description": "Creative form of yoga where poses are linked together with the breath in a flowing sequence",
+      "date": "2025-08-05",
+      "startTime": "19:00",
+      "endTime": "20:15",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/vinyasa.jpg?raw=true",
       "categories": [
         "yoga"
       ]

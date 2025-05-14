@@ -3,22 +3,23 @@ import { useParams } from 'react-router-dom';
 import {
   Container,
   Heading,
+  Box,
   Text,
-  Spinner,
-  Center,
   Image,
+  Tag,
   Wrap,
   WrapItem,
-  Tag,
+  Spinner,
+  Center,
 } from '@chakra-ui/react';
 
-export const EventDetailPage = () => {
-  const { id } = useParams();
+const EventDetails = () => {
+  const { eventId } = useParams(); // Get the eventId from the URL
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/events/${id}`)
+    fetch(`http://localhost:3000/events/${eventId}`)
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);
@@ -28,7 +29,7 @@ export const EventDetailPage = () => {
         console.error('Failed to fetch event:', error);
         setLoading(false);
       });
-  }, [id]);
+  }, [eventId]); // Re-fetch when eventId changes
 
   if (loading) {
     return (
@@ -39,49 +40,48 @@ export const EventDetailPage = () => {
   }
 
   if (!event) {
-    return <Text textAlign="center">Event not found.</Text>;
+    return <Text>No event found.</Text>;
   }
 
   return (
-    <Container maxW="800px" p={6}>
-      <Heading mb={4}>{event.title || event.name}</Heading>
-
+    <Container maxW="800px" mt={8}>
+      <Heading mb={6}>{event.title || event.name}</Heading>
       {event.image && (
         <Image
           src={event.image}
           alt={event.title || event.name}
-          borderRadius="md"
-          mb={4}
-          maxH="400px"
+          width="100%"
+          height="400px"
           objectFit="cover"
+          mb={4}
         />
       )}
-
-      <Text fontSize="lg" mb={2}>
-        <strong>Date:</strong> {event.date}
-      </Text>
-      <Text fontSize="lg" mb={2}>
-        <strong>Time:</strong> {event.startTime} - {event.endTime}
-      </Text>
-      <Text fontSize="lg" mb={2}>
-        <strong>Location:</strong> {event.location}
-      </Text>
-
-      {event.description && (
-        <Text color="gray.700" mb={4}>
-          {event.description}
+      <Box>
+        <Text fontSize="lg" mb={2}>
+          <strong>Description:</strong> {event.description}
         </Text>
-      )}
+        <Text fontSize="lg" mb={2}>
+          <strong>Date:</strong> {event.date}
+        </Text>
+        <Text fontSize="lg" mb={2}>
+          <strong>Time:</strong> {event.startTime} - {event.endTime}
+        </Text>
+        <Text fontSize="lg" mb={2}>
+          <strong>Location:</strong> {event.location}
+        </Text>
 
-      {event.categories && (
-        <Wrap>
-          {event.categories.map((cat, idx) => (
-            <WrapItem key={idx}>
-              <Tag colorScheme="blue">{cat}</Tag>
-            </WrapItem>
-          ))}
-        </Wrap>
-      )}
+        {event.categories && event.categories.length > 0 && (
+          <Wrap mt={3}>
+            {event.categories.map((cat, idx) => (
+              <WrapItem key={idx}>
+                <Tag colorScheme="blue">{cat}</Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        )}
+      </Box>
     </Container>
   );
 };
+
+export default EventDetails;
