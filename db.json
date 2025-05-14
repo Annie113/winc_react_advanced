@@ -29,14 +29,40 @@
     {
       "id": "780a",
       "title": "Mama & Baby Yoga",
-      "description": "In Verbinding met Jezelf & Je Baby",
+      "description": "To make a connection to your inner self and baby.",
       "date": "2025-08-06",
       "startTime": "09:30",
       "endTime": "10:45",
       "location": "Wild Lotus",
-      "image": "",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/mamababyyoga.jpg?raw=true",
       "categories": [
         "yoga"
+      ]
+    },
+    {
+      "id": "a756",
+      "title": "Full Beach Yoga Day",
+      "description": "One full day full of yoga, meditation and fully the attention to your inner self located at the beach.",
+      "date": "2025-08-09",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "location": "Zandvoort Beach",
+      "image": "",
+      "categories": [
+        "yoga & meditation"
+      ]
+    },
+    {
+      "id": "7acd",
+      "title": "Sound and Vibrational Bath",
+      "description": "Immerse yourself in a transformative experience where ancient and modern instruments harmonize to create a powerful soundscape.",
+      "date": "2025-08-08",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "location": "Wild Lotus",
+      "image": "",
+      "categories": [
+        "music & meditation"
       ]
     }
   ]
