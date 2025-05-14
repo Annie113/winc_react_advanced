@@ -60,7 +60,7 @@
       "startTime": "19:00",
       "endTime": "21:00",
       "location": "Wild Lotus",
-      "image": "",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/instrument.jpg?raw=true",
       "categories": [
         "music & meditation"
       ]
@@ -73,7 +73,7 @@
       "startTime": "12:00",
       "endTime": "13:00",
       "location": "Wild Lotus",
-      "image": "",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/mindfullness.jpg?raw=true",
       "categories": [
         "meditation"
       ]
