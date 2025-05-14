@@ -47,7 +47,7 @@
       "startTime": "09:00",
       "endTime": "17:00",
       "location": "Zandvoort Beach",
-      "image": "",
+      "image": "https://raw.githubusercontent.com/Annie113/winc_react_advanced/refs/heads/main/src/images/yogabeachday.jpg",
       "categories": [
         "yoga & meditation"
       ]
@@ -63,6 +63,19 @@
       "image": "",
       "categories": [
         "music & meditation"
+      ]
+    },
+    {
+      "id": "25a1",
+      "title": "Meditation and Mindfullness",
+      "description": "Mindfulness teaches you the skill of paying attention to the present by noticing when your mind wanders off. ",
+      "date": "2025-08-04",
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "location": "Wild Lotus",
+      "image": "",
+      "categories": [
+        "meditation"
       ]
     }
   ]
