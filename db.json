@@ -73,7 +73,7 @@
       "startTime": "12:00",
       "endTime": "13:00",
       "location": "Wild Lotus",
-      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/meditation.jpg?raw=true",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/minfullness.jpg?raw=true",
       "categories": [
         "meditation"
       ]
@@ -89,6 +89,19 @@
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/src/images/cacao.jpg?raw=true",
       "categories": [
         "yoga & meditation"
+      ]
+    },
+    {
+      "id": "061e",
+      "title": "Inner Growth and Authentic Relationships",
+      "description": "A transformative life coaching group designed to guide you on a journey of self-discovery and meaningful connections.",
+      "date": "2025-08-10",
+      "startTime": "19:15",
+      "endTime": "21:15",
+      "location": "Wild Lotus",
+      "image": "",
+      "categories": [
+        "coaching"
       ]
     }
   ]
