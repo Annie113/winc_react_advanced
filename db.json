@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "React Conference",
+      "date": "2025-06-10",
+      "location": "San Francisco"
+    },
+    {
+      "id": 2,
+      "title": "Vue Meetup",
+      "date": "2025-06-15",
+      "location": "New York"
+    }
+  ]
+}
