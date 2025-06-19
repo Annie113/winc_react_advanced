@@ -45,13 +45,31 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
+              to="/"
+              variant="ghost"
+              color="#245B41"
+              _hover={{ bg: "transparent", color: "#88A179" }}
+            >
+              About us
+            </Button>
+            <Button
+              as={RouterLink}
               to="/events"
+              variant="ghost"
+              color="#245B41"
+              _hover={{ bg: "transparent", color: "#88A179" }}
+            >
+              Events
+            </Button>
+            <Button
+              as={RouterLink}
+              to="/"
               variant="ghost"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
               pr={10}
             >
-              All Events
+              Contact
             </Button>
           </HStack>
         </Flex>

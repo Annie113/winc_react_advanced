@@ -15,12 +15,12 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
-import AddEventButton from '/src/components/Buttons/AddEventButton';
-import DeleteEventButton from '/src/components/Buttons/DeleteEventButton';
-import ViewEventButton from '/src/components/Buttons/ViewEventButton';
-import EditEventButton from '/src/components/Buttons/EditEventButton';
-import EditEventModal from '/src/components/ui/EditEventModal';
-import EventSearchBar from '/src/components/ui/EventSearchBar'; // ✅ NEW
+import AddEventButton from '../components/Buttons/AddEventButton';
+import DeleteEventButton from '../components/Buttons/DeleteEventButton';
+import ViewEventButton from '../components/Buttons/ViewEventButton';
+import EditEventButton from '../components/Buttons/EditEventButton';
+import EditEventModal from '../components/ui/EditEventModal';
+import EventSearchBar from '../components/ui/EventSearchBar'; // ✅ NEW
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
@@ -72,7 +72,7 @@ const EventsPage = () => {
   const allCategories = [...new Set(events.flatMap((e) => e.categories || []))];
 
   return (
-    <Container maxW="1200px" mx="auto" p={6}>
+    <Container maxW="1200px" mx="auto" p={6} mt={20}>
       <Flex justify="space-between" align="center" mb={6}>
         <Heading>List of Events</Heading>
         <AddEventButton />
