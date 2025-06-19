@@ -38,6 +38,19 @@
       "categories": [
         "yoga & meditation"
       ]
+    },
+    {
+      "id": "e2d0",
+      "title": "Vinyasa Flow Yoga",
+      "description": "Get moving with the challenging Vinyasa Flow practice at The Cosmos with this energising practice suitable for healthy, active bodies with at least some experience of Yoga. Arriving on the mat, we begin with a Guided Mediation and begin to create heat through Pranayama and Creative Flows. Prepare to move your whole body, exploring both strength and flexibility in this strong, challenging practice.",
+      "date": "2025-08-06",
+      "startTime": "09:15",
+      "endTime": "10:15",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/yinyanyoga.jpg?raw=true",
+      "categories": [
+        "yoga"
+      ]
     }
   ]
 }
