@@ -8,6 +8,8 @@ import {
   FormControl,
   FormLabel,
   VStack,
+  Text,
+  Image,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,10 +21,12 @@ export const AddEventPage = () => {
     startTime: '',
     endTime: '',
     location: '',
-    image: '', // ✅ now stores image URL
+    image: '',
     categories: '',
   });
 
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -32,10 +36,23 @@ export const AddEventPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
+
+    const { title, date, startTime, endTime, location } = formData;
+
+    // Basic required field validation
+    if (!title || !date || !startTime || !endTime || !location) {
+      setError('Please fill in all required fields.');
+      return;
+    }
 
     const newEvent = {
       ...formData,
-      categories: formData.categories.split(',').map((c) => c.trim()),
+      categories: formData.categories
+        .split(',')
+        .map((c) => c.trim())
+        .filter((c) => c !== ''),
     };
 
     try {
@@ -54,15 +71,33 @@ export const AddEventPage = () => {
       const data = await response.json();
       console.log('Event added:', data);
 
-      navigate('/events');
+      setSuccess('Event added successfully!');
+      setFormData({
+        title: '',
+        description: '',
+        date: '',
+        startTime: '',
+        endTime: '',
+        location: '',
+        image: '',
+        categories: '',
+      });
+
+      // Redirect after short delay (optional)
+      setTimeout(() => navigate('/events'), 1000);
     } catch (error) {
       console.error('Error adding event:', error);
+      setError('An error occurred while adding the event.');
     }
   };
 
   return (
     <Container maxW="600px" mt={8}>
       <Heading mb={6}>Add New Event</Heading>
+
+      {error && <Text color="red.500" mb={2}>{error}</Text>}
+      {success && <Text color="green.500" mb={2}>{success}</Text>}
+
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
           <FormControl isRequired>
@@ -95,11 +130,26 @@ export const AddEventPage = () => {
             <Input name="location" value={formData.location} onChange={handleChange} />
           </FormControl>
 
-          {/* ✅ Image URL Input */}
           <FormControl>
             <FormLabel>Image URL</FormLabel>
-            <Input name="image" value={formData.image} onChange={handleChange} placeholder="https://example.com/image.jpg" />
+            <Input
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
+              placeholder="https://example.com/image.jpg"
+            />
           </FormControl>
+
+          {formData.image && (
+            <Image
+              src={formData.image}
+              alt="Event"
+              borderRadius="md"
+              objectFit="cover"
+              width="100%"
+              maxH="200px"
+            />
+          )}
 
           <FormControl>
             <FormLabel>Categories (comma separated)</FormLabel>
