@@ -1,16 +1,17 @@
 {
   "events": [
     {
-      "id": 1,
-      "title": "React Conference",
-      "date": "2025-06-10",
-      "location": "San Francisco"
-    },
-    {
-      "id": 2,
-      "title": "Vue Meetup",
-      "date": "2025-06-15",
-      "location": "New York"
+      "id": "0c54",
+      "title": "Mindfulness",
+      "description": "Free yourself from old beliefs & limiting patterns and live a life of presence, purpose and pleasure. Discover the transformative power of mindfulness, breathwork and compassion to release stress & uncover the gold within. ",
+      "date": "2025-08-04",
+      "startTime": "20:00",
+      "endTime": "21:30",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/minfullness.jpg?raw=true",
+      "categories": [
+        "meditation"
+      ]
     }
   ]
 }
