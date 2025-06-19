@@ -25,6 +25,19 @@
       "categories": [
         "yoga & meditation"
       ]
+    },
+    {
+      "id": "b613",
+      "title": "Yin Yoga",
+      "description": "Your Deep Tissue ~ Your Deep Body, Mind & Soul Practice. Join us for Yin Yoga ~ this nurturing candlelit practice is suitable for all experience levels & all bodies. Arriving on the mat, we begin with a Guided Mediation and Set Our Intention for the Practice. Yin Yoga is designed to transform body, mind and soul.",
+      "date": "2025-08-05",
+      "startTime": "20:30",
+      "endTime": "21:45",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/deepbreath.jpg?raw=true",
+      "categories": [
+        "yoga & meditation"
+      ]
     }
   ]
 }
