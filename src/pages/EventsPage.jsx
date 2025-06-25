@@ -72,7 +72,7 @@ const EventsPage = () => {
   const allCategories = [...new Set(events.flatMap((e) => e.categories || []))];
 
   return (
-    <Container maxW="1200px" mx="auto" p={6} mt={20}>
+    <Container maxW="1200px" mx="auto">
       <Flex justify="space-between" align="center" mb={6}>
         <Heading>List of Events</Heading>
         <AddEventButton />

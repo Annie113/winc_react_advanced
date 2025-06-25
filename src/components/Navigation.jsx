@@ -1,5 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
-import { Flex, Image, HStack, Button, Box, Link } from "@chakra-ui/react";
+import { Flex, Image, HStack, Button, Box } from "@chakra-ui/react";
 
 export const Navigation = () => {
   return (
@@ -8,7 +8,6 @@ export const Navigation = () => {
         as="nav"
         bg="white"
         boxShadow="md"
-        position="fixed"
         top={0}
         left={0}
         right={0}
@@ -24,13 +23,15 @@ export const Navigation = () => {
           justify="space-between"
           wrap="wrap"
         >
-          {/* Logo wrapped in RouterLink */}
+          {/* Logo wrapped in RouterLink for home navigation */}
+          <RouterLink to="/">
             <Image
               src="/images/wildlotuslogo.png"
               alt="Wild Lotus Yoga Logo"
               maxH="100px"
               cursor="pointer"
             />
+          </RouterLink>
 
           {/* Navigation Buttons */}
           <HStack spacing={4}>
@@ -45,7 +46,7 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
-              to="/"
+              to="/about-us"
               variant="ghost"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
@@ -63,7 +64,7 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
-              to="/"
+              to="/contact"
               variant="ghost"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}

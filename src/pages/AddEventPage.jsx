@@ -92,7 +92,7 @@ export const AddEventPage = () => {
   };
 
   return (
-    <Container maxW="600px" mt={8}>
+    <Container maxW="600px">
       <Heading mb={6}>Add New Event</Heading>
 
       {error && <Text color="red.500" mb={2}>{error}</Text>}
@@ -102,32 +102,65 @@ export const AddEventPage = () => {
         <VStack spacing={4}>
           <FormControl isRequired>
             <FormLabel>Title</FormLabel>
-            <Input name="title" value={formData.title} onChange={handleChange} />
+            <Input
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl>
             <FormLabel>Description</FormLabel>
-            <Textarea name="description" value={formData.description} onChange={handleChange} />
+            <Textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Date</FormLabel>
-            <Input type="date" name="date" value={formData.date} onChange={handleChange} />
+            <Input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Start Time</FormLabel>
-            <Input type="time" name="startTime" value={formData.startTime} onChange={handleChange} />
+            <Input
+              type="time"
+              name="startTime"
+              value={formData.startTime}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>End Time</FormLabel>
-            <Input type="time" name="endTime" value={formData.endTime} onChange={handleChange} />
+            <Input
+              type="time"
+              name="endTime"
+              value={formData.endTime}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Location</FormLabel>
-            <Input name="location" value={formData.location} onChange={handleChange} />
+            <Input
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
           </FormControl>
 
           <FormControl>
@@ -137,6 +170,7 @@ export const AddEventPage = () => {
               value={formData.image}
               onChange={handleChange}
               placeholder="https://example.com/image.jpg"
+              focusBorderColor="#b8bfb8"
             />
           </FormControl>
 
@@ -153,11 +187,20 @@ export const AddEventPage = () => {
 
           <FormControl>
             <FormLabel>Categories (comma separated)</FormLabel>
-            <Input name="categories" value={formData.categories} onChange={handleChange} />
+            <Input
+              name="categories"
+              value={formData.categories}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              mb={5}
+            />
           </FormControl>
 
-          <Button type="submit" colorScheme="teal" width="full">
-            Submit
+          <Button
+            type="submit"
+            width="full"
+          >
+            Submit Event
           </Button>
         </VStack>
       </form>

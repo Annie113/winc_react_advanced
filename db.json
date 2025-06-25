@@ -51,6 +51,32 @@
       "categories": [
         "yoga"
       ]
+    },
+    {
+      "id": "2d0d",
+      "title": "Kids Yoga",
+      "description": "Children need to move, so what better way than to have your kids do yoga? The classes are extremely playful in nature. Teacher Yiwen takes the kids on an adventure around the world by mixing yoga, stories, games, breath and even a bit of martial arts.",
+      "date": "2025-08-23",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/kidsyoga.jpg?raw=true",
+      "categories": [
+        "yoga"
+      ]
+    },
+    {
+      "id": "6509",
+      "title": "Yoga Beach Day",
+      "description": "Dive deeper into your journey with a vibrant full day yoga session on the beach, where you'll experience the benefits of movement and mindfulness in nature's embrace.",
+      "date": "2025-08-09",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "location": "Zandvoort Beach",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/yogabeachday.jpg?raw=true",
+      "categories": [
+        "yoga & meditation"
+      ]
     }
   ]
 }

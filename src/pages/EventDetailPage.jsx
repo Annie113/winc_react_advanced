@@ -44,8 +44,8 @@ const EventDetails = () => {
   }
 
   return (
-    <Container maxW="800px" mt="80px"> {/* Increased top margin to avoid navbar overlap */}
-      <Heading pt={4} mb={6}>{event.title || event.name}</Heading>
+    <Container maxW="800px"> 
+      <Heading pb={6} mb={6}>{event.title || event.name}</Heading>
       {event.image && (
         <Image
           src={event.image}
@@ -53,11 +53,11 @@ const EventDetails = () => {
           width="100%"
           height="400px"
           objectFit="cover"
-          mb={4}
+          mb={7}
         />
       )}
       <Box>
-        <Text fontSize="lg" mb={2}>
+        <Text fontSize="lg" mb={6}>
           <strong>Description:</strong> {event.description}
         </Text>
         <Text fontSize="lg" mb={2}>
@@ -66,7 +66,7 @@ const EventDetails = () => {
         <Text fontSize="lg" mb={2}>
           <strong>Time:</strong> {event.startTime} - {event.endTime}
         </Text>
-        <Text fontSize="lg" mb={2}>
+        <Text fontSize="lg" mb={6}>
           <strong>Location:</strong> {event.location}
         </Text>
 
