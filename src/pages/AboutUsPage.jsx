@@ -33,10 +33,10 @@ const AboutUsPage = () => {
     <Box>
       {/* Hero Section */}
       <Box
-        bgImage="url('https://images.unsplash.com/photo-1554311889-cf84b8b2ff29?auto=format&fit=crop&w=1950&q=80')"
+        bgImage="url('https://github.com/Annie113/winc_react_advanced/blob/main/public/images/aboutus.jpg?raw=true')"
         bgSize="cover"
         bgPosition="center"
-        h="60vh"
+        h="20vh"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -44,12 +44,6 @@ const AboutUsPage = () => {
         textAlign="center"
         px={4}
       >
-        <Box bg="rgba(0, 0, 0, 0.6)" p={6} rounded="md">
-          <Heading fontSize={['3xl', '4xl', '5xl']}>Welcome to ZenFlow Yoga Studio</Heading>
-          <Text mt={4} fontSize="xl">
-            Where breath meets movement and minds find peace.
-          </Text>
-        </Box>
       </Box>
 
       {/* About Section */}

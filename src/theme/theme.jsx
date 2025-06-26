@@ -1,28 +1,47 @@
+// theme.jsx
 import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
+  colors: {
+    customGreen: {
+      100: '#CDE4DA',
+      500: '#245b41',
+      700: '#1A3E30',
+    },
+  },
   components: {
     Button: {
       baseStyle: {
-        fontWeight: 'medium', // consistent style
+        fontWeight: 'medium',
       },
       variants: {
         solid: {
-          bg: '#245b41',
+          bg: 'customGreen.500',
           color: 'white',
           _hover: {
-            bg: '#7F8F88',
+            bg: 'customGreen.700',
           },
         },
         ghost: {
-          color: '#7F8F88',
+          color: 'customGreen.500',
           _hover: {
-            bg: '#88A179',
+            bg: 'customGreen.100',
           },
         },
       },
       defaultProps: {
-        colorScheme: '#7F8F8', // default color scheme
+        colorScheme: 'customGreen',
+        variant: 'solid',
+      },
+    },
+    Link: {
+      variants: {
+        social: {
+          color: 'white',
+          _hover: {
+            color: '#dadbdd',
+          },
+        },
       },
     },
   },

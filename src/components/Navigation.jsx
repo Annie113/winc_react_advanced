@@ -37,6 +37,7 @@ export const Navigation = () => {
           <HStack spacing={4}>
             <Button
               as={RouterLink}
+              fontSize="lg"
               to="/"
               variant="ghost"
               color="#245B41"
@@ -46,6 +47,7 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
+              fontSize="lg"
               to="/about-us"
               variant="ghost"
               color="#245B41"
@@ -55,6 +57,7 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
+              fontSize="lg"
               to="/events"
               variant="ghost"
               color="#245B41"
@@ -64,6 +67,7 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
+              fontSize="lg"
               to="/contact"
               variant="ghost"
               color="#245B41"

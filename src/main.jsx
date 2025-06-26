@@ -8,19 +8,18 @@ import EventDetails from './pages/EventDetailPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Root } from './components/Root';
 
-// 🔽 Import your About Us Page
 import AboutUsPage from './pages/AboutUsPage';
+import ContactPage from './pages/ContactPage'; // ✅ Import Contact Page
 
-// Import your custom Chakra UI theme
 import theme from '/src/theme/theme.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/',             // Root path
+    path: '/',
     element: <Root />,
     children: [
       {
-        path: '',    // Home page (default)
+        path: '',
         element: <HomePage />,
       },
       {
@@ -36,8 +35,12 @@ const router = createBrowserRouter([
         element: <AddEventPage />,
       },
       {
-        path: 'about-us',  // ✅ This is the missing route
+        path: 'about-us',
         element: <AboutUsPage />,
+      },
+      {
+        path: 'contact',         // ✅ Contact page route added
+        element: <ContactPage />,
       },
     ],
   },

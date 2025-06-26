@@ -20,7 +20,7 @@ import DeleteEventButton from '../components/Buttons/DeleteEventButton';
 import ViewEventButton from '../components/Buttons/ViewEventButton';
 import EditEventButton from '../components/Buttons/EditEventButton';
 import EditEventModal from '../components/ui/EditEventModal';
-import EventSearchBar from '../components/ui/EventSearchBar'; // ✅ NEW
+import EventSearchBar from '../components/ui/EventSearchBar'; 
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
@@ -74,7 +74,7 @@ const EventsPage = () => {
   return (
     <Container maxW="1200px" mx="auto">
       <Flex justify="space-between" align="center" mb={6}>
-        <Heading>List of Events</Heading>
+        <Heading>Upcoming Events</Heading>
         <AddEventButton />
       </Flex>
 

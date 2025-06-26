@@ -77,6 +77,32 @@
       "categories": [
         "yoga & meditation"
       ]
+    },
+    {
+      "id": "c8e7",
+      "title": "Cacao Ceremony",
+      "description": "Cacao helps us to journey within, connect to our heart, reveal patterns, cultivate self-love, increase consciousness and supports us in our path and personal growth. It does not create things that are not there, but rather is a catalyst for these processes. It is known as a heart-opening medicine that helps to expand insight and awareness.",
+      "date": "2025-08-16",
+      "startTime": "12:00",
+      "endTime": "16:00",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/cacao.jpg?raw=true",
+      "categories": [
+        "meditation"
+      ]
+    },
+    {
+      "id": "e562",
+      "title": "Breath in Music Together",
+      "description": "Follow guided meditation instruction as you listen to live music more viscerally than ever before. ",
+      "date": "2025-08-17",
+      "startTime": "19:00",
+      "endTime": "20:30",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/instrument.jpg?raw=true",
+      "categories": [
+        "music & meditation"
+      ]
     }
   ]
 }

@@ -6,9 +6,9 @@ export const HomePage = () => {
     <Flex
       minH="100vh"
       justify="center"
-      align="flex-start"  // Align items to the top vertically
+      align="flex-start"  
       px={2}
-      pt={{ base: 20, md: 20, lg: 150 }}  // More top padding for spacing from top edge
+      pt={{ base: 20, md: 20, lg: 150 }}  
       bgImage="url('/images/backgroundsand.jpg')"
       bgSize="cover"
       bgPosition="center"
