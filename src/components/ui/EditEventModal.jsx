@@ -17,6 +17,7 @@ import {
 
 const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
   const [formData, setFormData] = useState({
+    author: '',
     title: '',
     description: '',
     date: '',
@@ -32,6 +33,7 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
   useEffect(() => {
     if (event) {
       setFormData({
+        author: event.author || '',
         title: event.title || '',
         description: event.description || '',
         date: event.date || '',
@@ -50,7 +52,10 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
       ...prev,
       [name]:
         name === 'categories'
-          ? value.split(',').map((cat) => cat.trim()).filter((cat) => cat !== '')
+          ? value
+              .split(',')
+              .map((cat) => cat.trim())
+              .filter((cat) => cat !== '')
           : value,
     }));
   };
@@ -81,6 +86,17 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         <ModalHeader>Edit Event</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
+          <FormControl mb={3}>
+            <FormLabel>Author</FormLabel>
+            <Input
+              name="author"
+              value={formData.author}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
+          </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Title</FormLabel>
             <Input

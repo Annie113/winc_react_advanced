@@ -1,5 +1,4 @@
-// Footer.jsx
-import { Box, Flex, Text, Link, HStack } from '@chakra-ui/react';
+import { Box, Flex, Text, Link, HStack, Stack } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
@@ -7,38 +6,46 @@ const Footer = () => {
   return (
     <>
       <Box height="64px" />
-      <Box as="footer" bg="customGreen.500" paddingX={6} paddingY={6} mt="auto">
+      <Box as="footer" bg="customGreen.500" px={6} py={6} mt="auto">
         <Flex
           maxW="1200px"
-          px="4"
+          px={4}
           mx="auto"
-          width="100%"
+          w="100%"
+          direction={{ base: 'column', md: 'row' }}
           justify="space-between"
-          align="center"
-          wrap="wrap"
+          align={{ base: 'flex-start', md: 'center' }}
         >
-          <Text fontSize="sm" color="white">
+          <Text fontSize="sm" color="white" mb={{ base: 4, md: 0 }}>
             &copy; {new Date().getFullYear()} Wild Lotus Yoga. All rights reserved.
           </Text>
 
-          <HStack spacing={4}>
-            <Link href="https://facebook.com" isExternal variant="social">
-              <FaFacebookF size="16px" />
-            </Link>
-            <Link href="https://instagram.com" isExternal variant="social">
-              <FaInstagram size="16px" />
-            </Link>
-            <Link href="https://linkedin.com" isExternal variant="social" pr={4}>
-              <FaLinkedinIn size="16px" />
-            </Link>
+          <Stack
+            direction={{ base: 'column', sm: 'row' }}
+            spacing={{ base: 2, sm: 4 }}
+            align={{ base: 'flex-start', sm: 'center' }}
+          >
+            <HStack spacing={4}>
+              <Link href="https://facebook.com" isExterna color="white">
+                <FaFacebookF size="16px" />
+              </Link>
+              <Link href="https://instagram.com" isExternal color="white">
+                <FaInstagram size="16px" />
+              </Link>
+              <Link href="https://linkedin.com" isExternal color="white">
+                <FaLinkedinIn size="16px" />
+              </Link>
+            </HStack>
 
-            <Link as={RouterLink} to="/privacy" fontSize="sm" variant="social">
-              Privacy
-            </Link>
-            <Link as={RouterLink} to="/terms" fontSize="sm" variant="social">
-              Terms
-            </Link>
-          </HStack>
+            <HStack spacing={4} pt={{ base: 2, sm: 0 }}>
+              <Link as={RouterLink} to="/privacy" fontSize="sm" color="white">
+                Privacy
+              </Link>
+              <Link as={RouterLink} to="/terms" fontSize="sm" color="white">
+                Terms
+              </Link>
+            </HStack>
+          </Stack>
         </Flex>
       </Box>
     </>

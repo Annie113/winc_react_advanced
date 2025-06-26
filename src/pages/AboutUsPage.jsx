@@ -3,7 +3,6 @@ import {
   Heading,
   Text,
   Stack,
-  Image,
   SimpleGrid,
   Avatar,
   Container,
@@ -31,7 +30,7 @@ const instructors = [
 const AboutUsPage = () => {
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Image Section */}
       <Box
         bgImage="url('https://github.com/Annie113/winc_react_advanced/blob/main/public/images/aboutus.jpg?raw=true')"
         bgSize="cover"

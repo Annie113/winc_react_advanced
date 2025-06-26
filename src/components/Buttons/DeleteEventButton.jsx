@@ -21,8 +21,8 @@ const DeleteEventButton = ({ eventId, onDeleteSuccess }) => {
       });
 
       if (response.ok) {
-        onDeleteSuccess(eventId); // Notify parent to remove the event from state
-        onClose(); // Close dialog
+        onDeleteSuccess(eventId);
+        onClose();
       } else {
         console.error('Failed to delete event');
       }

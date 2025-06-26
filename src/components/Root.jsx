@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Navigation } from './Navigation';
-import Footer from './Footer'; // adjust path if needed
+import Footer from './Footer'; 
 import { Box, Flex } from '@chakra-ui/react';
 
 export const Root = () => {

@@ -41,7 +41,6 @@ export const AddEventPage = () => {
 
     const { title, date, startTime, endTime, location } = formData;
 
-    // Basic required field validation
     if (!title || !date || !startTime || !endTime || !location) {
       setError('Please fill in all required fields.');
       return;
@@ -73,6 +72,7 @@ export const AddEventPage = () => {
 
       setSuccess('Event added successfully!');
       setFormData({
+        author: '',
         title: '',
         description: '',
         date: '',
@@ -100,6 +100,16 @@ export const AddEventPage = () => {
 
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
+          <FormControl isRequired>
+            <FormLabel>Author</FormLabel>
+            <Input
+              name="author"
+              value={formData.title}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+            />
+          </FormControl>
+
           <FormControl isRequired>
             <FormLabel>Title</FormLabel>
             <Input

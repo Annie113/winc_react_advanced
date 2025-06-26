@@ -1,7 +1,14 @@
 import { Link as RouterLink } from "react-router-dom";
-import { Flex, Image, HStack, Button, Box } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  Button,
+  Box,
+  Stack,
+} from "@chakra-ui/react";
 
 export const Navigation = () => {
+
   return (
     <>
       <Flex
@@ -12,34 +19,39 @@ export const Navigation = () => {
         left={0}
         right={0}
         zIndex={10}
-        paddingX={4}
-        paddingY={4}
+        px={4}
+        py={4}
       >
         <Flex
           maxW="1200px"
           mx="auto"
-          width="100%"
+          w="100%"
           align="center"
           justify="space-between"
-          wrap="wrap"
+          direction={{ base: "column", md: "row" }}
+          gap={{ base: 4, md: 0 }}
         >
-          {/* Logo wrapped in RouterLink for home navigation */}
+          {/* Logo */}
           <RouterLink to="/">
             <Image
               src="/images/wildlotuslogo.png"
               alt="Wild Lotus Yoga Logo"
-              maxH="100px"
-              cursor="pointer"
+              maxH="80px"
+              mx={{ base: "auto", md: "0" }}
             />
           </RouterLink>
 
-          {/* Navigation Buttons */}
-          <HStack spacing={4}>
+          {/* Nav Buttons */}
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 2, md: 4 }}
+            align="center"
+          >
             <Button
               as={RouterLink}
-              fontSize="lg"
               to="/"
               variant="ghost"
+              fontSize="lg"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
             >
@@ -47,9 +59,9 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
-              fontSize="lg"
               to="/about-us"
               variant="ghost"
+              fontSize="lg"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
             >
@@ -57,9 +69,9 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
-              fontSize="lg"
               to="/events"
               variant="ghost"
+              fontSize="lg"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
             >
@@ -67,19 +79,20 @@ export const Navigation = () => {
             </Button>
             <Button
               as={RouterLink}
-              fontSize="lg"
               to="/contact"
               variant="ghost"
+              fontSize="lg"
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
-              pr={10}
+              pr={{ base: 0, md: 10 }}
             >
               Contact
             </Button>
-          </HStack>
+          </Stack>
         </Flex>
       </Flex>
 
+      {/* Spacer to avoid content under fixed nav */}
       <Box height="64px" />
     </>
   );

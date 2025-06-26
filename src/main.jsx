@@ -9,7 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Root } from './components/Root';
 
 import AboutUsPage from './pages/AboutUsPage';
-import ContactPage from './pages/ContactPage'; // ✅ Import Contact Page
+import ContactPage from './pages/ContactPage';
 
 import theme from '/src/theme/theme.jsx';
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <AboutUsPage />,
       },
       {
-        path: 'contact',         // ✅ Contact page route added
+        path: 'contact',     
         element: <ContactPage />,
       },
     ],

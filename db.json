@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": "0c54",
+      "author": "Annelies Malzer",
       "title": "Mindfulness",
       "description": "Free yourself from old beliefs & limiting patterns and live a life of presence, purpose and pleasure. Discover the transformative power of mindfulness, breathwork and compassion to release stress & uncover the gold within. ",
       "date": "2025-08-04",
@@ -12,9 +12,11 @@
       "categories": [
         "meditation",
         "breathwork"
-      ]
+      ],
+      "id": "0c54"
     },
     {
+      "author": "Annelies Malzer",
       "title": "Mama and Baby Yoga",
       "description": "Our Prenatal Postnatal Pilates and Prenatal Postnatal Yoga {All Women Welcome} classes combine breath work, alignment focused work, energising dance-like flows, deeply safe stretching and strengthening postures to keep your body in good shape and your energy levels high.",
       "date": "2025-08-04",
@@ -30,7 +32,7 @@
       "id": "003e"
     },
     {
-      "id": "b613",
+      "author": "Annelies Malzer",
       "title": "Yin Yoga",
       "description": "Your Deep Tissue ~ Your Deep Body, Mind & Soul Practice. Join us for Yin Yoga ~ this nurturing candlelit practice is suitable for all experience levels & all bodies. Arriving on the mat, we begin with a Guided Mediation and Set Our Intention for the Practice. Yin Yoga is designed to transform body, mind and soul.",
       "date": "2025-08-05",
@@ -42,10 +44,11 @@
         "yoga",
         "meditation",
         "breathwork"
-      ]
+      ],
+      "id": "b613"
     },
     {
-      "id": "e2d0",
+      "author": "Annelies Malzer",
       "title": "Vinyasa Flow Yoga",
       "description": "Get moving with the challenging Vinyasa Flow practice at The Cosmos with this energising practice suitable for healthy, active bodies with at least some experience of Yoga. Arriving on the mat, we begin with a Guided Mediation and begin to create heat through Pranayama and Creative Flows. Prepare to move your whole body, exploring both strength and flexibility in this strong, challenging practice.",
       "date": "2025-08-06",
@@ -56,10 +59,11 @@
       "categories": [
         "yoga",
         "meditation"
-      ]
+      ],
+      "id": "e2d0"
     },
     {
-      "id": "2d0d",
+      "author": "Annelies Malzer",
       "title": "Kids Yoga",
       "description": "Children need to move, so what better way than to have your kids do yoga? The classes are extremely playful in nature. Teacher Yiwen takes the kids on an adventure around the world by mixing yoga, stories, games, breath and even a bit of martial arts.",
       "date": "2025-08-23",
@@ -70,10 +74,11 @@
       "categories": [
         "yoga",
         "breathwork"
-      ]
+      ],
+      "id": "2d0d"
     },
     {
-      "id": "6509",
+      "author": "Annelies Malzer",
       "title": "Yoga Beach Day",
       "description": "Dive deeper into your journey with a vibrant full day yoga session on the beach, where you'll experience the benefits of movement and mindfulness in nature's embrace.",
       "date": "2025-08-09",
@@ -85,10 +90,11 @@
         "yoga",
         "meditation",
         "breathwork"
-      ]
+      ],
+      "id": "6509"
     },
     {
-      "id": "c8e7",
+      "author": "Annelies Malzer",
       "title": "Cacao Ceremony",
       "description": "Cacao helps us to journey within, connect to our heart, reveal patterns, cultivate self-love, increase consciousness and supports us in our path and personal growth. It does not create things that are not there, but rather is a catalyst for these processes. It is known as a heart-opening medicine that helps to expand insight and awareness.",
       "date": "2025-08-16",
@@ -99,10 +105,11 @@
       "categories": [
         "meditation",
         "music"
-      ]
+      ],
+      "id": "c8e7"
     },
     {
-      "id": "e562",
+      "author": "Annelies Malzer",
       "title": "Breath in Music Together",
       "description": "Follow guided meditation instruction as you listen to live music more viscerally than ever before. ",
       "date": "2025-08-17",
@@ -113,7 +120,8 @@
       "categories": [
         "meditation",
         "music"
-      ]
+      ],
+      "id": "e562"
     }
   ]
 }

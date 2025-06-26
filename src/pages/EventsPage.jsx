@@ -78,7 +78,7 @@ const EventsPage = () => {
         <AddEventButton />
       </Flex>
 
-      {/* ✅ Search and Filter Bar */}
+      {/* Search and Filter Bar */}
       <EventSearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -117,9 +117,15 @@ const EventsPage = () => {
               )}
 
               <Box flex="1">
-                <Text fontSize="2xl" fontWeight="bold" mb={2}>
+                <Text fontSize="2xl" fontWeight="bold" mb={1}>
                   {event.title || event.name}
                 </Text>
+
+                {event.author && (
+                  <Text fontSize="sm" color="#245B41" mb={3}>
+                    By {event.author}
+                  </Text>
+                )}
 
                 {event.description && (
                   <Text color="gray.600" mb={2}>
