@@ -16,21 +16,42 @@ import {
 } from '@chakra-ui/react';
 
 const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
-  const [formData, setFormData] = useState(event || {});
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    date: '',
+    startTime: '',
+    endTime: '',
+    location: '',
+    image: '',
+    categories: [],
+  });
+
   const toast = useToast();
 
   useEffect(() => {
-    setFormData(event || {});
+    if (event) {
+      setFormData({
+        title: event.title || '',
+        description: event.description || '',
+        date: event.date || '',
+        startTime: event.startTime || '',
+        endTime: event.endTime || '',
+        location: event.location || '',
+        image: event.image || '',
+        categories: event.categories || [],
+      });
+    }
   }, [event]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
-      [name]: name === 'categories'
-        ? value.split(',').map((cat) => cat.trim())
-        : value,
+      [name]:
+        name === 'categories'
+          ? value.split(',').map((cat) => cat.trim()).filter((cat) => cat !== '')
+          : value,
     }));
   };
 
@@ -48,7 +69,7 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
       onSave(updatedEvent);
       toast({ title: 'Event updated.', status: 'success', duration: 3000 });
       onClose();
-    } catch (err) {
+    } catch {
       toast({ title: 'Error updating event.', status: 'error', duration: 3000 });
     }
   };
@@ -62,40 +83,104 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         <ModalBody>
           <FormControl mb={3}>
             <FormLabel>Title</FormLabel>
-            <Input name="title" value={formData.title || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
+            <Input
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Description</FormLabel>
-            <Textarea name="description" value={formData.description || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
+            <Textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Date</FormLabel>
-            <Input name="date" type="date" value={formData.date || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
+            <Input
+              name="date"
+              type="date"
+              value={formData.date}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Start Time</FormLabel>
-            <Input name="startTime" type="time" value={formData.startTime || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
+            <Input
+              name="startTime"
+              type="time"
+              value={formData.startTime}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>End Time</FormLabel>
-            <Input name="endTime" type="time" value={formData.endTime || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
+            <Input
+              name="endTime"
+              type="time"
+              value={formData.endTime}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Location</FormLabel>
-            <Input name="location" value={formData.location || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
+            <Input
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Image URL</FormLabel>
-            <Input name="image" value={formData.image || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
+            <Input
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
+
           <FormControl mb={3}>
             <FormLabel>Categories (comma-separated)</FormLabel>
-            <Input name="categories" value={(formData.categories || []).join(', ')} onChange={handleChange} placeholder="e.g. Music, Outdoor, Family" focusBorderColor="#b8bfb8" />
+            <Input
+              name="categories"
+              value={formData.categories.join(', ')}
+              onChange={handleChange}
+              placeholder="e.g. Music, Outdoor, Family"
+              focusBorderColor="#b8bfb8"
+              variant="filled"
+            />
           </FormControl>
         </ModalBody>
+
         <ModalFooter>
-          <Button onClick={onClose} mr={3}>Cancel</Button>
-          <Button onClick={handleSubmit}>Save</Button>
+          <Button onClick={onClose} mr={3}>
+            Cancel
+          </Button>
+          <Button onClick={handleSubmit}>
+            Save
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

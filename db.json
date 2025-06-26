@@ -15,7 +15,6 @@
       ]
     },
     {
-      "id": "003e",
       "title": "Mama and Baby Yoga",
       "description": "Our Prenatal Postnatal Pilates and Prenatal Postnatal Yoga {All Women Welcome} classes combine breath work, alignment focused work, energising dance-like flows, deeply safe stretching and strengthening postures to keep your body in good shape and your energy levels high.",
       "date": "2025-08-04",
@@ -27,7 +26,8 @@
         "yoga",
         "meditation",
         "breathwork"
-      ]
+      ],
+      "id": "003e"
     },
     {
       "id": "b613",
