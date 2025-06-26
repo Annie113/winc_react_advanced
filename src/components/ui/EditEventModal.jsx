@@ -25,7 +25,13 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === 'categories'
+        ? value.split(',').map((cat) => cat.trim())
+        : value,
+    }));
   };
 
   const handleSubmit = async () => {
@@ -56,27 +62,35 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         <ModalBody>
           <FormControl mb={3}>
             <FormLabel>Title</FormLabel>
-            <Input name="title" value={formData.title || ''} onChange={handleChange} />
+            <Input name="title" value={formData.title || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
           </FormControl>
           <FormControl mb={3}>
             <FormLabel>Description</FormLabel>
-            <Textarea name="description" value={formData.description || ''} onChange={handleChange} />
+            <Textarea name="description" value={formData.description || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
           </FormControl>
           <FormControl mb={3}>
             <FormLabel>Date</FormLabel>
-            <Input name="date" type="date" value={formData.date || ''} onChange={handleChange} />
+            <Input name="date" type="date" value={formData.date || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
           </FormControl>
           <FormControl mb={3}>
             <FormLabel>Start Time</FormLabel>
-            <Input name="startTime" type="time" value={formData.startTime || ''} onChange={handleChange} />
+            <Input name="startTime" type="time" value={formData.startTime || ''} onChange={handleChange} focusBorderColor="#b8bfb8"/>
           </FormControl>
           <FormControl mb={3}>
             <FormLabel>End Time</FormLabel>
-            <Input name="endTime" type="time" value={formData.endTime || ''} onChange={handleChange} />
+            <Input name="endTime" type="time" value={formData.endTime || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
           </FormControl>
           <FormControl mb={3}>
             <FormLabel>Location</FormLabel>
-            <Input name="location" value={formData.location || ''} onChange={handleChange} />
+            <Input name="location" value={formData.location || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
+          </FormControl>
+          <FormControl mb={3}>
+            <FormLabel>Image URL</FormLabel>
+            <Input name="image" value={formData.image || ''} onChange={handleChange} focusBorderColor="#b8bfb8" />
+          </FormControl>
+          <FormControl mb={3}>
+            <FormLabel>Categories (comma-separated)</FormLabel>
+            <Input name="categories" value={(formData.categories || []).join(', ')} onChange={handleChange} placeholder="e.g. Music, Outdoor, Family" focusBorderColor="#b8bfb8" />
           </FormControl>
         </ModalBody>
         <ModalFooter>

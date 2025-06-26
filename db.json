@@ -10,7 +10,8 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/minfullness.jpg?raw=true",
       "categories": [
-        "meditation"
+        "meditation",
+        "breathwork"
       ]
     },
     {
@@ -23,7 +24,9 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/mamababyyoga.jpg?raw=true",
       "categories": [
-        "yoga & meditation"
+        "yoga",
+        "meditation",
+        "breathwork"
       ]
     },
     {
@@ -36,7 +39,9 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/deepbreath.jpg?raw=true",
       "categories": [
-        "yoga & meditation"
+        "yoga",
+        "meditation",
+        "breathwork"
       ]
     },
     {
@@ -49,7 +54,8 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/yinyanyoga.jpg?raw=true",
       "categories": [
-        "yoga"
+        "yoga",
+        "meditation"
       ]
     },
     {
@@ -62,7 +68,8 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/kidsyoga.jpg?raw=true",
       "categories": [
-        "yoga"
+        "yoga",
+        "breathwork"
       ]
     },
     {
@@ -75,7 +82,9 @@
       "location": "Zandvoort Beach",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/yogabeachday.jpg?raw=true",
       "categories": [
-        "yoga & meditation"
+        "yoga",
+        "meditation",
+        "breathwork"
       ]
     },
     {
@@ -88,7 +97,8 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/cacao.jpg?raw=true",
       "categories": [
-        "meditation"
+        "meditation",
+        "music"
       ]
     },
     {
@@ -101,7 +111,8 @@
       "location": "Wild Lotus",
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/instrument.jpg?raw=true",
       "categories": [
-        "music & meditation"
+        "meditation",
+        "music"
       ]
     }
   ]
