@@ -13,7 +13,9 @@ import {
   SimpleGrid,
   Flex,
   useDisclosure,
+  LinkBox,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 import AddEventButton from '../components/Buttons/AddEventButton';
 import DeleteEventButton from '../components/Buttons/DeleteEventButton';
@@ -30,11 +32,15 @@ const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch('http://localhost:3000/events')
       .then((res) => res.json())
       .then((data) => {
-        setEvents(data);
+        // Sort events by date ascending (earliest first)
+        const sortedEvents = data.sort((a, b) => new Date(a.date) - new Date(b.date));
+        setEvents(sortedEvents);
         setLoading(false);
       })
       .catch((error) => {
@@ -94,79 +100,93 @@ const EventsPage = () => {
       ) : (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
           {filteredEvents.map((event) => (
-            <Flex
+            <LinkBox
               key={event.id}
-              direction="column"
-              p={4}
-              borderWidth="1px"
+              as="article"
+              onClick={() => navigate(`/event/${event.id}`)}
+              cursor="pointer"
+              _hover={{ boxShadow: 'lg' }}
+              transition="all 0.2s"
               borderRadius="lg"
-              boxShadow="md"
+              borderWidth="1px"
               bg="white"
+              boxShadow="md"
               height="100%"
             >
-              {event.image && (
-                <Image
-                  src={event.image}
-                  alt={event.title || event.name}
-                  width="100%"
-                  height="200px"
-                  objectFit="cover"
-                  borderTopRadius="md"
-                  mb={4}
-                />
-              )}
-
-              <Box flex="1">
-                <Text fontSize="2xl" fontWeight="bold" mb={1}>
-                  {event.title || event.name}
-                </Text>
-
-                {event.author && (
-                  <Text fontSize="sm" color="#245B41" mb={3}>
-                    By {event.author}
-                  </Text>
-                )}
-
-                {event.description && (
-                  <Text color="gray.600" mb={2}>
-                    {event.description}
-                  </Text>
-                )}
-
-                <Text>
-                  <strong>Date:</strong> {event.date}
-                </Text>
-                <Text>
-                  <strong>Time:</strong> {event.startTime} - {event.endTime}
-                </Text>
-                <Text>
-                  <strong>Location:</strong> {event.location}
-                </Text>
-
-                {event.categories && event.categories.length > 0 && (
-                  <Wrap mt={3}>
-                    {event.categories.map((cat, idx) => (
-                      <WrapItem key={idx}>
-                        <Tag bg="#DADBDD" color="#5B605E" pl={2} pb={1}>
-                          {cat}
-                        </Tag>
-                      </WrapItem>
-                    ))}
-                  </Wrap>
-                )}
-              </Box>
-
-              <Flex justify="space-between" mt={4}>
-                <ViewEventButton eventId={event.id} />
-                <Flex gap={2}>
-                  <EditEventButton onClick={() => handleEditClick(event)} />
-                  <DeleteEventButton
-                    eventId={event.id}
-                    onDeleteSuccess={handleDeleteSuccess}
+              <Flex direction="column" p={4} height="100%">
+                {event.image && (
+                  <Image
+                    src={event.image}
+                    alt={event.title || event.name}
+                    width="100%"
+                    height="200px"
+                    objectFit="cover"
+                    borderTopRadius="md"
+                    mb={4}
                   />
+                )}
+
+                <Box flex="1">
+                  <Text fontSize="2xl" fontWeight="bold" mb={1}>
+                    {event.title || event.name}
+                  </Text>
+
+                  {event.author && (
+                    <Text fontSize="sm" color="#245B41" mb={3}>
+                      By {event.author}
+                    </Text>
+                  )}
+
+                  {event.description && (
+                    <Text color="gray.600" mb={2}>
+                      {event.description}
+                    </Text>
+                  )}
+
+                  <Text>
+                    <strong>Date:</strong> {event.date}
+                  </Text>
+                  <Text>
+                    <strong>Time:</strong> {event.startTime} - {event.endTime}
+                  </Text>
+                  <Text>
+                    <strong>Location:</strong> {event.location}
+                  </Text>
+
+                  {event.categories && event.categories.length > 0 && (
+                    <Wrap mt={3}>
+                      {event.categories.map((cat, idx) => (
+                        <WrapItem key={idx}>
+                          <Tag bg="#DADBDD" color="#5B605E" pl={2} pb={1}>
+                            {cat}
+                          </Tag>
+                        </WrapItem>
+                      ))}
+                    </Wrap>
+                  )}
+                </Box>
+
+                <Flex justify="space-between" mt={4}>
+                  <ViewEventButton
+                    eventId={event.id}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                  <Flex gap={2}>
+                    <EditEventButton
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEditClick(event);
+                      }}
+                    />
+                    <DeleteEventButton
+                      eventId={event.id}
+                      onDeleteSuccess={handleDeleteSuccess}
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </Flex>
                 </Flex>
               </Flex>
-            </Flex>
+            </LinkBox>
           ))}
         </SimpleGrid>
       )}

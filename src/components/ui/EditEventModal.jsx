@@ -13,6 +13,7 @@ import {
   FormControl,
   FormLabel,
   useToast,
+  Image,
 } from '@chakra-ui/react';
 
 const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
@@ -25,9 +26,10 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
     endTime: '',
     location: '',
     image: '',
-    categories: [],
+    categories: '', // now a string
   });
 
+  const [loading, setLoading] = useState(false);
   const toast = useToast();
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         endTime: event.endTime || '',
         location: event.location || '',
         image: event.image || '',
-        categories: event.categories || [],
+        categories: (event.categories || []).join(', '), // join array to string
       });
     }
   }, [event]);
@@ -50,22 +52,25 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]:
-        name === 'categories'
-          ? value
-              .split(',')
-              .map((cat) => cat.trim())
-              .filter((cat) => cat !== '')
-          : value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async () => {
+    setLoading(true);
     try {
+      const payload = {
+        ...formData,
+        categories: formData.categories
+          .split(',')
+          .map((cat) => cat.trim())
+          .filter((cat) => cat !== ''),
+      };
+
       const res = await fetch(`http://localhost:3000/events/${event.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) throw new Error('Failed to update event');
@@ -76,6 +81,8 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
       onClose();
     } catch {
       toast({ title: 'Error updating event.', status: 'error', duration: 3000 });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -175,13 +182,23 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
               focusBorderColor="#b8bfb8"
               variant="filled"
             />
+            {formData.image && (
+              <Image
+                src={formData.image}
+                alt="Event preview"
+                mt={3}
+                borderRadius="md"
+                maxHeight="200px"
+                objectFit="cover"
+              />
+            )}
           </FormControl>
 
           <FormControl mb={3}>
             <FormLabel>Categories (comma-separated)</FormLabel>
             <Input
               name="categories"
-              value={formData.categories.join(', ')}
+              value={formData.categories}
               onChange={handleChange}
               placeholder="e.g. Music, Outdoor, Family"
               focusBorderColor="#b8bfb8"
@@ -191,10 +208,10 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         </ModalBody>
 
         <ModalFooter>
-          <Button onClick={onClose} mr={3}>
+          <Button onClick={onClose} mr={3} isDisabled={loading}>
             Cancel
           </Button>
-          <Button onClick={handleSubmit}>
+          <Button onClick={handleSubmit} colorScheme="teal" isLoading={loading}>
             Save
           </Button>
         </ModalFooter>

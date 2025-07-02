@@ -18,7 +18,7 @@ export const HomePage = () => {
         <Image
           src="/images/wildlotuslogo.png"
           alt="Wild Lotus Yoga Logo"
-          maxW="500px"
+          maxW="100%"
           mx="auto"
         />
         <GoToEventsButton />

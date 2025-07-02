@@ -104,7 +104,7 @@ export const AddEventPage = () => {
             <FormLabel>Author</FormLabel>
             <Input
               name="author"
-              value={formData.title}
+              value={formData.author}
               onChange={handleChange}
               focusBorderColor="#b8bfb8"
             />
