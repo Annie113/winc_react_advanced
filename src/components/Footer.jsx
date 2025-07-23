@@ -26,7 +26,7 @@ const Footer = () => {
             align={{ base: 'flex-start', sm: 'center' }}
           >
             <HStack spacing={4}>
-              <Link href="https://facebook.com" isExternal color="white">
+              <Link href="https://facebook.com" isExterna color="white">
                 <FaFacebookF size="16px" />
               </Link>
               <Link href="https://instagram.com" isExternal color="white">

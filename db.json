@@ -11,9 +11,25 @@
       "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/minfullness.jpg?raw=true",
       "categories": [
         "meditation",
-        "music"
+        "breathwork"
       ],
       "id": "0c54"
+    },
+    {
+      "author": "Annelies Malzer",
+      "title": "Mama and Baby Yoga",
+      "description": "Our Prenatal Postnatal Pilates and Prenatal Postnatal Yoga {All Women Welcome} classes combine breath work, alignment focused work, energising dance-like flows, deeply safe stretching and strengthening postures to keep your body in good shape and your energy levels high.",
+      "date": "2025-08-04",
+      "startTime": "11:45",
+      "endTime": "12:45",
+      "location": "Wild Lotus",
+      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/mamababyyoga.jpg?raw=true",
+      "categories": [
+        "yoga",
+        "meditation",
+        "breathwork"
+      ],
+      "id": "003e"
     },
     {
       "author": "Annelies Malzer",
@@ -106,22 +122,6 @@
         "music"
       ],
       "id": "e562"
-    },
-    {
-      "id": "2992",
-      "title": "Mama and Baby Yoga",
-      "description": "Our Prenatal Postnatal Pilates and Prenatal Postnatal Yoga {All Women Welcome} classes combine breath work, alignment focused work, energising dance-like flows, deeply safe stretching and strengthening postures to keep your body in good shape and your energy levels high.",
-      "date": "2025-08-04",
-      "startTime": "11:45",
-      "endTime": "12:45",
-      "location": "Wild Lotus",
-      "image": "https://github.com/Annie113/winc_react_advanced/blob/main/public/images/mamababyyoga.jpg?raw=true",
-      "categories": [
-        "yoga",
-        "meditation",
-        "breathwork"
-      ],
-      "author": "Annelies Mälzer"
     }
   ]
 }
