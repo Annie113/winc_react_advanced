@@ -31,7 +31,7 @@ const EventsPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    fetch('http://localhost:3000/events')
+    fetch(`${API}/events`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
