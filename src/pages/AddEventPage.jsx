@@ -55,7 +55,7 @@ export const AddEventPage = () => {
     };
 
     try {
-      const response = await fetch(`${API}/events`, {
+      const response = await fetch('http://localhost:3000/events', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
