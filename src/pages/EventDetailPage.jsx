@@ -14,24 +14,32 @@ import {
 } from '@chakra-ui/react';
 
 const EventDetails = () => {
-  const { eventId } = useParams(); // Get the eventId from the URL
+  const { eventId } = useParams();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const API = import.meta.env.VITE_API_URL; // comes from .env locally or Netlify env vars
+    const API = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
+    if (!API) {
+      console.error('VITE_API_URL is not set. Add it in Netlify env vars (and .env locally).');
+      setLoading(false);
+      return;
+    }
 
     fetch(`${API}/events/${eventId}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+        return res.json();
+      })
       .then((data) => {
         setEvent(data);
-        setLoading(false);
       })
       .catch((error) => {
         console.error('Failed to fetch event:', error);
-        setLoading(false);
-      });
-  }, [eventId]); // Re-fetch when eventId changes
+      })
+      .finally(() => setLoading(false));
+  }, [eventId]);
 
   if (loading) {
     return (
@@ -46,8 +54,9 @@ const EventDetails = () => {
   }
 
   return (
-    <Container maxW="800px"> 
+    <Container maxW="800px">
       <Heading pb={6} mb={6}>{event.title || event.name}</Heading>
+
       {event.image && (
         <Image
           src={event.image}
@@ -58,10 +67,14 @@ const EventDetails = () => {
           mb={7}
         />
       )}
+
       <Box>
-        <Text fontSize="lg" mb={6}>
-          <strong>Description:</strong> {event.description}
-        </Text>
+        {event.description && (
+          <Text fontSize="lg" mb={6}>
+            <strong>Description:</strong> {event.description}
+          </Text>
+        )}
+
         <Text fontSize="lg" mb={2}>
           <strong>Date:</strong> {event.date}
         </Text>
@@ -72,7 +85,7 @@ const EventDetails = () => {
           <strong>Location:</strong> {event.location}
         </Text>
 
-        {event.categories && event.categories.length > 0 && (
+        {Array.isArray(event.categories) && event.categories.length > 0 && (
           <Wrap mt={3}>
             {event.categories.map((cat, idx) => (
               <WrapItem key={idx}>

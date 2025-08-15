@@ -15,6 +15,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const AddEventPage = () => {
   const [formData, setFormData] = useState({
+    author: '',
     title: '',
     description: '',
     date: '',
@@ -55,7 +56,12 @@ export const AddEventPage = () => {
     };
 
     try {
-      const API = import.meta.env.VITE_API_URL; // uses Netlify env var
+      const API = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
+      if (!API) {
+        throw new Error('VITE_API_URL is not set. Add it in Netlify env vars (and .env locally).');
+      }
+
       const response = await fetch(`${API}/events`, {
         method: 'POST',
         headers: {
@@ -65,7 +71,7 @@ export const AddEventPage = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to add event');
+        throw new Error(`Failed to add event: ${response.status} ${response.statusText}`);
       }
 
       const data = await response.json();
@@ -84,7 +90,7 @@ export const AddEventPage = () => {
         categories: '',
       });
 
-      // Redirect after short delay (optional)
+      // Redirect after short delay
       setTimeout(() => navigate('/events'), 1000);
     } catch (error) {
       console.error('Error adding event:', error);
@@ -105,7 +111,7 @@ export const AddEventPage = () => {
             <FormLabel>Author</FormLabel>
             <Input
               name="author"
-              value={formData.title}
+              value={formData.author}
               onChange={handleChange}
               focusBorderColor="#b8bfb8"
             />
@@ -207,10 +213,7 @@ export const AddEventPage = () => {
             />
           </FormControl>
 
-          <Button
-            type="submit"
-            width="full"
-          >
+          <Button type="submit" width="full">
             Submit Event
           </Button>
         </VStack>

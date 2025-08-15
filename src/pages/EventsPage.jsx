@@ -31,16 +31,26 @@ const EventsPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    const API = import.meta.env.VITE_API_URL; // from .env locally or Netlify env vars
+    const API = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
+    if (!API) {
+      console.error('VITE_API_URL is not set. Add it in Netlify env vars (and .env locally).');
+      setLoading(false);
+      return;
+    }
 
     fetch(`${API}/events`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+        return res.json();
+      })
       .then((data) => {
         setEvents(data);
-        setLoading(false);
       })
       .catch((error) => {
         console.error('Failed to fetch events:', error);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);
