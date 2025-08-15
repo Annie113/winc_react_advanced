@@ -19,7 +19,9 @@ const EventDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/events/${eventId}`)
+    const API = import.meta.env.VITE_API_URL; // comes from .env locally or Netlify env vars
+
+    fetch(`${API}/events/${eventId}`)
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);

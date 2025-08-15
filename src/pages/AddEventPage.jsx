@@ -55,7 +55,8 @@ export const AddEventPage = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/events', {
+      const API = import.meta.env.VITE_API_URL; // uses Netlify env var
+      const response = await fetch(`${API}/events`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

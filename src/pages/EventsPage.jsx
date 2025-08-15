@@ -31,7 +31,9 @@ const EventsPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    fetch('http://localhost:3000/events')
+    const API = import.meta.env.VITE_API_URL; // from .env locally or Netlify env vars
+
+    fetch(`${API}/events`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
