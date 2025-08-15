@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   useDisclosure,
@@ -13,21 +13,29 @@ import {
 const DeleteEventButton = ({ eventId, onDeleteSuccess }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
-    try {
-      const response = await fetch(`http://localhost:3000/events/${eventId}`, {
-        method: 'DELETE',
-      });
+    const API = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
-      if (response.ok) {
-        onDeleteSuccess(eventId);
-        onClose();
-      } else {
-        console.error('Failed to delete event');
-      }
-    } catch (error) {
-      console.error('Error deleting event:', error);
+    if (!API) {
+      console.error('VITE_API_URL is not set. Add it in Netlify env vars (and .env locally).');
+      return;
+    }
+
+    setIsDeleting(true);
+    try {
+      const res = await fetch(`${API}/events/${eventId}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+
+      // Update parent list
+      if (typeof onDeleteSuccess === 'function') onDeleteSuccess(eventId);
+
+      onClose();
+    } catch (err) {
+      console.error('Error deleting event:', err);
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -54,10 +62,10 @@ const DeleteEventButton = ({ eventId, onDeleteSuccess }) => {
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
+              <Button ref={cancelRef} onClick={onClose} isDisabled={isDeleting}>
                 Cancel
               </Button>
-              <Button colorScheme="red" onClick={handleDelete} ml={3}>
+              <Button colorScheme="red" onClick={handleDelete} ml={3} isLoading={isDeleting}>
                 Delete
               </Button>
             </AlertDialogFooter>

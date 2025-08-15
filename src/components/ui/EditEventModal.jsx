@@ -27,7 +27,7 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
     image: '',
     categories: [],
   });
-
+  const [isSaving, setIsSaving] = useState(false);
   const toast = useToast();
 
   useEffect(() => {
@@ -61,26 +61,49 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
   };
 
   const handleSubmit = async () => {
+    const API = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
+    if (!event?.id) {
+      toast({ title: 'No event selected.', status: 'error', duration: 3000 });
+      return;
+    }
+    if (!API) {
+      toast({
+        title: 'Missing API URL',
+        description: 'VITE_API_URL is not set (Netlify env vars / .env).',
+        status: 'error',
+        duration: 3000,
+      });
+      return;
+    }
+
+    setIsSaving(true);
     try {
-      const res = await fetch(`http://localhost:3000/events/${event.id}`, {
+      const res = await fetch(`${API}/events/${event.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error('Failed to update event');
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      }
 
       const updatedEvent = await res.json();
-      onSave(updatedEvent);
+      if (typeof onSave === 'function') onSave(updatedEvent);
+
       toast({ title: 'Event updated.', status: 'success', duration: 3000 });
       onClose();
-    } catch {
+    } catch (err) {
+      console.error('Error updating event:', err);
       toast({ title: 'Error updating event.', status: 'error', duration: 3000 });
+    } finally {
+      setIsSaving(false);
     }
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Edit Event</ModalHeader>
@@ -191,10 +214,10 @@ const EditEventModal = ({ isOpen, onClose, event, onSave }) => {
         </ModalBody>
 
         <ModalFooter>
-          <Button onClick={onClose} mr={3}>
+          <Button onClick={onClose} mr={3} isDisabled={isSaving}>
             Cancel
           </Button>
-          <Button onClick={handleSubmit}>
+          <Button onClick={handleSubmit} isLoading={isSaving}>
             Save
           </Button>
         </ModalFooter>
