@@ -93,7 +93,7 @@ export const Navigation = () => {
       </Flex>
 
       {/* Spacer to avoid content under fixed nav */}
-      <Box height="64px" />
+      <Box/>
     </>
   );
 };

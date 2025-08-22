@@ -86,7 +86,7 @@ const EventsPage = () => {
   return (
     <Container maxW="1200px" mx="auto">
       <Flex justify="space-between" align="center" mb={6}>
-        <Heading>Upcoming Events</Heading>
+        <Heading pt={10}>Upcoming Events</Heading>
         <AddEventButton />
       </Flex>
 

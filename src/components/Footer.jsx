@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 const Footer = () => {
   return (
     <>
-      <Box height="64px" />
+      <Box/>
       <Box as="footer" bg="customGreen.500" px={6} py={6} mt="auto">
         <Flex
           maxW="1200px"
