@@ -104,7 +104,7 @@ const EventsPage = () => {
           <Spinner size="xl" />
         </Center>
       ) : (
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} pb={20}>
           {filteredEvents.map((event) => (
             <Flex
               key={event.id}
