@@ -85,6 +85,7 @@ export const Navigation = () => {
               color="#245B41"
               _hover={{ bg: "transparent", color: "#88A179" }}
               pr={{ base: 0, md: 10 }}
+              pl={0}
             >
               Contact
             </Button>
