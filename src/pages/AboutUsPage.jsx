@@ -13,17 +13,17 @@ const instructors = [
   {
     name: 'Aria Patel',
     role: 'Lead Instructor',
-    image: 'https://i.pravatar.cc/150?img=32',
+    image: '/images/aria-patel.png',
   },
   {
-    name: 'Liam Chen',
+    name: 'Liam Hanson',
     role: 'Vinyasa Expert',
-    image: 'https://i.pravatar.cc/150?img=45',
+    image: '/images/liam-hanson.png',
   },
   {
     name: 'Sophia Martinez',
     role: 'Hatha Yoga Instructor',
-    image: 'https://i.pravatar.cc/150?img=56',
+    image:'/images/sophia.png',
   },
 ];
 
