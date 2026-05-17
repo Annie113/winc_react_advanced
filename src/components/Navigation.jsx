@@ -36,7 +36,7 @@ export const Navigation = () => {
             <Image
               src="/images/wildlotuslogo.png"
               alt="Wild Lotus Yoga Logo"
-              maxH="80px"
+              maxH="120px"
               mx={{ base: "auto", md: "0" }}
             />
           </RouterLink>
