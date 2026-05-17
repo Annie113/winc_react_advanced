@@ -32,7 +32,7 @@ const AboutUsPage = () => {
     <Box>
       {/* Image Section */}
       <Box
-        bgImage="url('https://github.com/Annie113/winc_react_advanced/blob/main/public/images/aboutus.jpg?raw=true')"
+        bgImage='/images/aboutus.png'
         bgSize="cover"
         bgPosition="center"
         h="20vh"

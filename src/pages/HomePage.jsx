@@ -1,4 +1,4 @@
-import { Flex, Image, VStack } from '@chakra-ui/react';
+import { Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import GoToEventsButton from '/src/components/Buttons/GoToEventsButton.jsx';
 
 export const HomePage = () => {
@@ -14,12 +14,32 @@ export const HomePage = () => {
       bgPosition="center"
       bgRepeat="no-repeat"
     >
-      <VStack spacing={6}>
-        <Image
-          src="/images/wildlotuslogo.png"
-          alt="Wild Lotus Yoga Logo"
-          mx="auto"
-        />
+      <VStack spacing={1}>
+        {/* --------SUB TEXT ABOVE HEADING-------- */}
+        <Text
+          color="#646257"
+          textAlign="center"
+          fontSize={{ base: "sm", md: "md" }}
+          fontWeight="600"
+          textTransform="uppercase"
+          letterSpacing="0.18em"
+          fontSize="1.3rem"
+         >
+    Come join us at
+  </Text>
+        {/* --------HEADING-------- */}
+        <Heading
+          fontFamily="'Roboto', system-ui, sans-serif"
+          as="h1"
+          fontSize={{ base: '4xl', md: '6xl', lg: '7xl' }}
+          color="#245B41"
+          textTransform="uppercase"
+          textAlign="center"
+          fontWeight="bold"
+          pb={3}
+        >
+          Wild Lotus Yoga
+        </Heading>
         <GoToEventsButton />
       </VStack>
     </Flex>
