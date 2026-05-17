@@ -90,7 +90,7 @@ const EventsPage = () => {
         <AddEventButton />
       </Flex>
 
-      {/* Search and Filter Bar */}
+      {/* ----------- SEARCH AND FILTER BAR ----------- */}
       <EventSearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -99,11 +99,15 @@ const EventsPage = () => {
         allCategories={allCategories}
       />
 
+      {/* ---------------- EVENTS GRID ---------------- */}
       {loading ? (
-        <Center>
-          <Spinner size="xl" />
+        <Center flexDirection="column" py={10}>
+          <Spinner size="xl" mb={4} />
+          <Text color="gray.600" textAlign="center">
+              Loading events... this might take a moment.
+          </Text>
         </Center>
-      ) : (
+       ) : (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} pb={20}>
           {filteredEvents.map((event) => (
             <Flex
