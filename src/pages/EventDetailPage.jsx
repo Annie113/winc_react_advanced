@@ -54,7 +54,7 @@ const EventDetails = () => {
   }
 
   return (
-    <Container maxW="1200px" py={{ base: 8, md: 12 }}>
+    <Container maxW="1200px" py={{ base: 8, md: 12 }} pb={{ base: 10, md: 16 }}>
       <Heading pb={6} mb={{ base: 1, md: 6 }}>{event.title || event.name}</Heading>
 
       {event.image && (

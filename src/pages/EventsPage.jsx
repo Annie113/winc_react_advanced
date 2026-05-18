@@ -87,7 +87,7 @@ const EventsPage = () => {
   const allCategories = [...new Set(events.flatMap((e) => e.categories || []))];
 
   return (
-    <Container maxW="1200px" mx="auto">
+    <Container maxW="1200px" mx="auto" pb={{ base: 12, md: 16 }}>
       <Flex justify="space-between" align="center" mb={{ base: 1, md: 6 }}>
         <Heading as="h1"  pt={{ base: 6, md: 10}}>Upcoming Events</Heading>
 
@@ -115,7 +115,7 @@ const EventsPage = () => {
           </Text>
         </Center>
       ) : (
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} pb={20}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
           {filteredEvents.map((event) => (
             <Flex
               key={event.id}
