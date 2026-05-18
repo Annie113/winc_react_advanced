@@ -7,46 +7,54 @@ const Footer = () => {
     <>
       <Box/>
       <Box as="footer" bg="customGreen.500" px={6} py={6} mt="auto">
-        <Flex
-          maxW="1200px"
-          px={4}
-          mx="auto"
-          w="100%"
-          direction={{ base: 'column', md: 'row' }}
-          justify="space-between"
-          align={{ base: 'flex-start', md: 'center' }}
-        >
-          <Text fontSize="sm" color="white" mb={{ base: 4, md: 0 }}>
-            &copy; {new Date().getFullYear()} Wild Lotus Yoga. All rights reserved.
-          </Text>
+<Flex
+  maxW="1200px"
+  px={4}
+  mx="auto"
+  w="100%"
+  direction={{ base: "column", md: "row" }}
+  justify="space-between"
+  align={{ base: "center", md: "center" }}
+  gap={{ base: 5, md: 0 }}
+>
+  <Text
+    fontSize="sm"
+    color="white"
+    textAlign={{ base: "center", md: "left" }}
+    mb={0}
+  >
+    &copy; {new Date().getFullYear()} Wild Lotus Yoga. All rights reserved.
+  </Text>
 
-          <Stack
-            direction={{ base: 'column', sm: 'row' }}
-            spacing={{ base: 2, sm: 4 }}
-            align={{ base: 'flex-start', sm: 'center' }}
-          >
-            <HStack spacing={4}>
-              <Link href="https://facebook.com" isExternal color="white">
-                <FaFacebookF size="16px" />
-              </Link>
-              <Link href="https://instagram.com" isExternal color="white">
-                <FaInstagram size="16px" />
-              </Link>
-              <Link href="https://linkedin.com" isExternal color="white">
-                <FaLinkedinIn size="16px" />
-              </Link>
-            </HStack>
+  <Stack
+    direction="row"
+    align="center"
+    justify={{ base: "center", md: "flex-end" }}
+    spacing={{ base: 8, md: 4 }}
+    w={{ base: "100%", md: "auto" }}
+  >
+    <HStack spacing={4}>
+      <Link href="https://facebook.com" isExternal color="white">
+        <FaFacebookF size="18px" />
+      </Link>
+      <Link href="https://instagram.com" isExternal color="white">
+        <FaInstagram size="18px" />
+      </Link>
+      <Link href="https://linkedin.com" isExternal color="white">
+        <FaLinkedinIn size="18px" />
+      </Link>
+    </HStack>
 
-            <HStack spacing={4} pt={{ base: 2, sm: 0 }}>
-              <Link as={RouterLink} to="/privacy" fontSize="sm" color="white">
-                Privacy
-              </Link>
-              <Link as={RouterLink} to="/terms" fontSize="sm" color="white">
-                Terms
-              </Link>
-            </HStack>
-          </Stack>
-        </Flex>
+    <HStack spacing={5}>
+      <Link as={RouterLink} to="/privacy" fontSize="sm" color="white">
+        Privacy
+      </Link>
+      <Link as={RouterLink} to="/terms" fontSize="sm" color="white">
+        Terms
+      </Link>
+    </HStack>
+  </Stack>
+</Flex>
       </Box>
     </>
   );

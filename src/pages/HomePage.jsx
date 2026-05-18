@@ -9,9 +9,9 @@ export const HomePage = () => {
       align="flex-start"  
       px={2}
       pt={{ base: 20, md: 20, lg: 150 }}  
-      bgImage="url('/images/backgroundsand.jpg')"
+      bgImage="url('/images/bg-home.jpg')"
       bgSize="cover"
-      bgPosition="center"
+      bgPosition={{ base: "70% center", md: "center" }}
       bgRepeat="no-repeat"
     >
       <VStack spacing={1}>

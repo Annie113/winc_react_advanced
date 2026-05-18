@@ -16,18 +16,19 @@ export const Navigation = () => {
 
   return (
     <>
-<Flex
-  as="nav"
-  bg="white"
-  boxShadow="md"
-  top={0}
-  left={0}
-  right={0}
-  zIndex={10}
-  px={{ base: 5, md: 4 }}
-  py={{ base: 3, md: 4 }}
->
-
+     {/* --------NAVIGATION FLEXBOX------- */}
+      <Flex
+        as="nav"
+        bg="white"
+        boxShadow="md"
+        top={0}
+        left={0}
+        right={0}
+        zIndex={10}
+        px={{ base: 5, md: 4 }}
+        py={{ base: 3, md: 4 }}
+      >
+     {/* --------TABLET/DESKTOP NAVIGATION FLEXBOX------- */}
       <Flex
         maxW="1200px"
         mx="auto"
@@ -37,38 +38,39 @@ export const Navigation = () => {
         direction={{ base: "column", md: "row" }}
         gap={{ base: 4, md: 0 }}
       >
-<Flex
-  w={{ base: "100%", md: "auto" }}
-  align="center"
-  justify="space-between"
->
-  <RouterLink to="/">
-    <Image
-      src="/images/wildlotuslogo.png"
-      alt="Wild Lotus Yoga Logo"
-      maxH={{ base: "80px", md: "120px" }}
-    />
-  </RouterLink>
+      <Flex
+        w={{ base: "100%", md: "auto" }}
+        align="center"
+        justify="space-between"
+      >
+      {/* --------LOGO------- */}       
+      <RouterLink to="/">
+        <Image
+          src="/images/wildlotuslogo.png"
+          alt="Wild Lotus Yoga Logo"
+          maxH={{ base: "80px", md: "120px" }}
+         />
+      </RouterLink>
 
-  {/* --------HAMBURGER MENU-------- */}
-  <IconButton
-    display={{ base: "flex", md: "none" }}
-    aria-label="Open menu"
-    icon={
-      isOpen ? (
-        <CloseIcon boxSize={3.5} />
-      ) : (
-        <HamburgerIcon boxSize={6} />
-      )
-    }
-    variant="ghost"
-    color="#245B41"
-    onClick={onToggle}
-    h="44px"
-    w="44px"
-  />
-</Flex>
-
+      {/* --------HAMBURGER MENU-------- */}
+      <IconButton
+         display={{ base: "flex", md: "none" }}
+         aria-label="Open menu"
+         icon={
+           isOpen ? (
+            <CloseIcon boxSize={3.5} />
+          ) : (
+            <HamburgerIcon boxSize={6} />
+          )
+        }
+        variant="ghost"
+        color="#245B41"
+        onClick={onToggle}
+        h="44px"
+        w="44px"
+        />
+      </Flex>
+      {/* --------DESKTOP NAVIGATION MENU------- */}      
           <Stack
             direction={{ base: "column", md: "row" }}
             spacing={{ base: 2, md: 4 }}
@@ -89,7 +91,7 @@ export const Navigation = () => {
             </Button>
           </Stack>
 
-          {/* --------MOBILE NAVIGATION BUTTONS-------- */}
+       {/* --------MOBILE NAVIGATION BUTTONS-------- */}
 
           <Collapse in={isOpen} animateOpacity>
             <Stack
