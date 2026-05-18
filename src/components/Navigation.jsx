@@ -68,6 +68,9 @@ export const Navigation = () => {
         onClick={onToggle}
         h="44px"
         w="44px"
+        _hover={{ bg: "transparent" }}
+        _active={{ bg: "transparent" }}
+        _focus={{ boxShadow: "none" }}
         />
       </Flex>
       {/* --------DESKTOP NAVIGATION MENU------- */}      
