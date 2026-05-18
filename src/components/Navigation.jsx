@@ -16,17 +16,17 @@ export const Navigation = () => {
 
   return (
     <>
-      <Flex
-        as="nav"
-        bg="white"
-        boxShadow="md"
-        top={0}
-        left={0}
-        right={0}
-        zIndex={10}
-        px={4}
-        py={4}
-      >
+<Flex
+  as="nav"
+  bg="white"
+  boxShadow="md"
+  top={0}
+  left={0}
+  right={0}
+  zIndex={10}
+  px={{ base: 5, md: 4 }}
+  py={{ base: 3, md: 4 }}
+>
 
       <Flex
         maxW="1200px"
@@ -37,38 +37,37 @@ export const Navigation = () => {
         direction={{ base: "column", md: "row" }}
         gap={{ base: 4, md: 0 }}
       >
-      <Flex
-        w={{ base: "100%", md: "auto" }}
-        align="center"
-        justify="space-between"
-      >
-            <RouterLink to="/">
-              <Image
-                src="/images/wildlotuslogo.png"
-                alt="Wild Lotus Yoga Logo"
-                maxH="120px"
-              />
-            </RouterLink>
+<Flex
+  w={{ base: "100%", md: "auto" }}
+  align="center"
+  justify="space-between"
+>
+  <RouterLink to="/">
+    <Image
+      src="/images/wildlotuslogo.png"
+      alt="Wild Lotus Yoga Logo"
+      maxH={{ base: "80px", md: "120px" }}
+    />
+  </RouterLink>
 
-            {/* --------HAMBURG MENU-------- */}
-
-            <IconButton
-                display={{ base: "flex", md: "none" }}
-                aria-label="Open menu"
-                icon={
-                  isOpen ? (
-                    <CloseIcon boxSize={4} />
-                  ) : (
-                    <HamburgerIcon boxSize={7} />
-                  )
-                }
-                variant="ghost"
-                color="#245B41"
-                onClick={onToggle}
-                h="56px"
-                w="56px"
-            />
-          </Flex>
+  {/* --------HAMBURGER MENU-------- */}
+  <IconButton
+    display={{ base: "flex", md: "none" }}
+    aria-label="Open menu"
+    icon={
+      isOpen ? (
+        <CloseIcon boxSize={3.5} />
+      ) : (
+        <HamburgerIcon boxSize={6} />
+      )
+    }
+    variant="ghost"
+    color="#245B41"
+    onClick={onToggle}
+    h="44px"
+    w="44px"
+  />
+</Flex>
 
           <Stack
             direction={{ base: "column", md: "row" }}
@@ -98,7 +97,7 @@ export const Navigation = () => {
               direction="column"
               spacing={2}
               w="50%"
-              pl={5}
+              pl={3}
             >
               <Button as={RouterLink} to="/" variant="ghost" fontSize="lg" color="#245B41" onClick={onToggle}>
                 Home
