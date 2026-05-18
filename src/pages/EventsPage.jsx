@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
   Heading,
@@ -20,9 +21,11 @@ import DeleteEventButton from '../components/Buttons/DeleteEventButton';
 import ViewEventButton from '../components/Buttons/ViewEventButton';
 import EditEventButton from '../components/Buttons/EditEventButton';
 import EditEventModal from '../components/ui/EditEventModal';
-import EventSearchBar from '../components/ui/EventSearchBar'; 
+import EventSearchBar from '../components/ui/EventSearchBar';
 
 const EventsPage = () => {
+  const navigate = useNavigate();
+
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -85,10 +88,11 @@ const EventsPage = () => {
 
   return (
     <Container maxW="1200px" mx="auto">
-      <Flex justify="space-between" align="center" mb={6}>
-        <Heading pt={10}>Upcoming Events</Heading>
-      {/* ----------- ADD EVENT BUTTON ----------- */}
-        <Box pt={10}>
+      <Flex justify="space-between" align="center" mb={{ base: 1, md: 6 }}>
+        <Heading as="h1"  pt={{ base: 6, md: 10}}>Upcoming Events</Heading>
+
+        {/* ----------- ADD EVENT BUTTON ----------- */}
+        <Box pt={{ base: 0, md: 10 }}>
           <AddEventButton />
         </Box>
       </Flex>
@@ -107,10 +111,10 @@ const EventsPage = () => {
         <Center flexDirection="column" py={10}>
           <Spinner size="xl" mb={4} />
           <Text color="gray.600" textAlign="center">
-              Loading events... this might take a moment.
+            Loading events... this might take a moment.
           </Text>
         </Center>
-       ) : (
+      ) : (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} pb={20}>
           {filteredEvents.map((event) => (
             <Flex
@@ -122,6 +126,13 @@ const EventsPage = () => {
               boxShadow="md"
               bg="white"
               height="100%"
+              cursor="pointer"
+              transition="all 0.2s ease"
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: 'lg',
+              }}
+              onClick={() => navigate(`/event/${event.id}`)}
             >
               {event.image && (
                 <Image
@@ -176,8 +187,11 @@ const EventsPage = () => {
               </Box>
 
               <Flex justify="space-between" mt={4}>
-                <ViewEventButton eventId={event.id} />
-                <Flex gap={2}>
+                <Box onClick={(e) => e.stopPropagation()}>
+                  <ViewEventButton eventId={event.id} />
+                </Box>
+
+                <Flex gap={2} onClick={(e) => e.stopPropagation()}>
                   <EditEventButton onClick={() => handleEditClick(event)} />
                   <DeleteEventButton
                     eventId={event.id}

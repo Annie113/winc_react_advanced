@@ -46,9 +46,9 @@ const AboutUsPage = () => {
       </Box>
 
       {/* About Section */}
-      <Container maxW="6xl" py={12}>
-        <Stack spacing={6} textAlign="center">
-          <Heading size="xl">Our Story</Heading>
+      <Container maxW="6xl" py={{ base: 6, md: 10}} pb={{ base: 12, md: 16 }}>
+        <Stack spacing={6} textAlign="left">
+          <Heading as="h1" size="xl" mb={{ base: 1, md: 6 }}>Our Story</Heading>
           <Text fontSize="lg">
             Wild Lotus was founded with a vision to create a sanctuary where people could reconnect with
             their bodies, minds, and spirits. Our instructors are passionate about guiding you through

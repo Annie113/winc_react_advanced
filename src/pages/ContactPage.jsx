@@ -16,11 +16,11 @@ import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const ContactPage = () => {
   return (
-    <Box minH="100vh" py={16}>
+    <Box minH="100vh" py={{ base: 6, md: 10}}>
       <Container maxW="6xl">
-        <Stack spacing={10} textAlign="center" mb={10}>
-          <Heading size="2xl">Contact Us</Heading>
-          <Text fontSize="lg" color="gray.600">
+        <Stack spacing={10} textAlign="left" mb={10}>
+          <Heading as="h1">Contact Us</Heading>
+          <Text color="gray.600">
             We'd love to hear from you. Feel free to reach out with questions, feedback, or just to say hi!
           </Text>
         </Stack>
