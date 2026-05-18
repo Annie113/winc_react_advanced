@@ -26,35 +26,35 @@ const Footer = () => {
     &copy; {new Date().getFullYear()} Wild Lotus Yoga. All rights reserved.
   </Text>
 
-  <Stack
-    direction="row"
-    align="center"
-    justify={{ base: "center", md: "flex-end" }}
-    spacing={{ base: 8, md: 4 }}
-    w={{ base: "100%", md: "auto" }}
-  >
-    <HStack spacing={4}>
-      <Link href="https://facebook.com" isExternal color="white">
-        <FaFacebookF size="18px" />
-      </Link>
-      <Link href="https://instagram.com" isExternal color="white">
-        <FaInstagram size="18px" />
-      </Link>
-      <Link href="https://linkedin.com" isExternal color="white">
-        <FaLinkedinIn size="18px" />
-      </Link>
-    </HStack>
+      <Stack
+        direction="row"
+        align="center"
+        justify={{ base: "center", md: "flex-end" }}
+        spacing={{ base: 8, md: 4 }}
+        w={{ base: "100%", md: "auto" }}
+      >
+      <HStack spacing={4}>
+        <Link href="https://facebook.com" isExternal color="white">
+          <FaFacebookF size="18px" />
+        </Link>
+        <Link href="https://instagram.com" isExternal color="white">
+          <FaInstagram size="18px" />
+        </Link>
+        <Link href="https://linkedin.com" isExternal color="white">
+          <FaLinkedinIn size="18px" />
+        </Link>
+      </HStack>
 
-    <HStack spacing={5}>
-      <Link as={RouterLink} to="/privacy" fontSize="sm" color="white">
-        Privacy
-      </Link>
-      <Link as={RouterLink} to="/terms" fontSize="sm" color="white">
-        Terms
-      </Link>
-    </HStack>
-  </Stack>
-</Flex>
+      <HStack spacing={5}>
+        <Link as={RouterLink} to="/privacy" fontSize="sm" color="white">
+          Privacy
+        </Link>
+        <Link as={RouterLink} to="/terms" fontSize="sm" color="white">
+          Terms
+        </Link>
+       </HStack>
+      </Stack>
+  </Flex>
       </Box>
     </>
   );

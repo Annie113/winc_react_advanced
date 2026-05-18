@@ -87,7 +87,10 @@ const EventsPage = () => {
     <Container maxW="1200px" mx="auto">
       <Flex justify="space-between" align="center" mb={6}>
         <Heading pt={10}>Upcoming Events</Heading>
-        <AddEventButton />
+      {/* ----------- ADD EVENT BUTTON ----------- */}
+        <Box pt={10}>
+          <AddEventButton />
+        </Box>
       </Flex>
 
       {/* ----------- SEARCH AND FILTER BAR ----------- */}
