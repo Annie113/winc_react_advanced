@@ -48,7 +48,8 @@ export const Navigation = () => {
         <Image
           src="/images/wildlotuslogo.png"
           alt="Wild Lotus Yoga Logo"
-          maxH={{ base: "80px", md: "120px" }}
+          maxH={{ base: "100px", md: "120px" }}
+          pl={{ base: 0, xl: 3 }}
          />
       </RouterLink>
 
@@ -96,28 +97,68 @@ export const Navigation = () => {
 
        {/* --------MOBILE NAVIGATION BUTTONS-------- */}
 
-          <Collapse in={isOpen} animateOpacity>
-            <Stack
-              display={{ base: "flex-start", md: "none" }}
-              direction="column"
-              spacing={2}
-              w="50%"
-              pl={3}
-            >
-              <Button as={RouterLink} to="/" variant="ghost" fontSize="lg" color="#245B41" onClick={onToggle}>
-                Home
-              </Button>
-              <Button as={RouterLink} to="/about-us" variant="ghost" fontSize="lg" color="#245B41" onClick={onToggle}>
-                About us
-              </Button>
-              <Button as={RouterLink} to="/events" variant="ghost" fontSize="lg" color="#245B41" onClick={onToggle}>
-                Events
-              </Button>
-              <Button as={RouterLink} to="/contact" variant="ghost" fontSize="lg" color="#245B41" onClick={onToggle}>
-                Contact
-              </Button>
-            </Stack>
-          </Collapse>
+<Collapse in={isOpen} animateOpacity style={{ width: "100%" }}>
+  <Stack
+    display={{ base: "flex", md: "none" }}
+    direction="column"
+    spacing={2}
+    w="100%"
+    align="flex-start"
+    pl={0}
+  >
+    <Button
+      as={RouterLink}
+      to="/"
+      variant="ghost"
+      fontSize="lg"
+      color="#245B41"
+      onClick={onToggle}
+      px={0}
+      justifyContent="flex-start"
+    >
+      Home
+    </Button>
+
+    <Button
+      as={RouterLink}
+      to="/about-us"
+      variant="ghost"
+      fontSize="lg"
+      color="#245B41"
+      onClick={onToggle}
+      px={0}
+      justifyContent="flex-start"
+    >
+      About us
+    </Button>
+
+    <Button
+      as={RouterLink}
+      to="/events"
+      variant="ghost"
+      fontSize="lg"
+      color="#245B41"
+      onClick={onToggle}
+      px={0}
+      justifyContent="flex-start"
+    >
+      Events
+    </Button>
+
+    <Button
+      as={RouterLink}
+      to="/contact"
+      variant="ghost"
+      fontSize="lg"
+      color="#245B41"
+      onClick={onToggle}
+      px={0}
+      justifyContent="flex-start"
+    >
+      Contact
+    </Button>
+  </Stack>
+</Collapse>
         </Flex>
       </Flex>
 
