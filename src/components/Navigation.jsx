@@ -97,66 +97,66 @@ export const Navigation = () => {
 
        {/* --------MOBILE NAVIGATION BUTTONS-------- */}
 
-<Collapse in={isOpen} animateOpacity style={{ width: "100%" }}>
-  <Stack
-    display={{ base: "flex", md: "none" }}
-    direction="column"
-    spacing={2}
-    w="100%"
-    align="flex-start"
-    pl={0}
-  >
-    <Button
-      as={RouterLink}
-      to="/"
-      variant="ghost"
-      fontSize="lg"
-      color="#245B41"
-      onClick={onToggle}
-      px={0}
-      justifyContent="flex-start"
-    >
-      Home
-    </Button>
+          <Collapse in={isOpen} animateOpacity style={{ width: "100%" }}>
+            <Stack
+              display={{ base: "flex", md: "none" }}
+              direction="column"
+              spacing={2}
+              w="100%"
+              align="flex-start"
+              pl={0}
+            >
+            <Button
+              as={RouterLink}
+              to="/"
+              variant="ghost"
+              fontSize="lg"
+              color="#245B41"
+              onClick={onToggle}
+              px={0}
+              justifyContent="flex-start"
+              >
+               Home
+            </Button>
 
-    <Button
-      as={RouterLink}
-      to="/about-us"
-      variant="ghost"
-      fontSize="lg"
-      color="#245B41"
-      onClick={onToggle}
-      px={0}
-      justifyContent="flex-start"
-    >
-      About us
-    </Button>
+            <Button
+              as={RouterLink}
+             to="/about-us"
+             variant="ghost"
+             fontSize="lg"
+             color="#245B41"
+             onClick={onToggle}
+             px={0}
+             justifyContent="flex-start"
+             >
+              About us
+            </Button>
 
-    <Button
-      as={RouterLink}
-      to="/events"
-      variant="ghost"
-      fontSize="lg"
-      color="#245B41"
-      onClick={onToggle}
-      px={0}
-      justifyContent="flex-start"
-    >
-      Events
-    </Button>
+            <Button
+             as={RouterLink}
+             to="/events"
+             variant="ghost"
+             fontSize="lg"
+             color="#245B41"
+             onClick={onToggle}
+             px={0}
+             justifyContent="flex-start"
+            >
+              Events
+            </Button>
 
-    <Button
-      as={RouterLink}
-      to="/contact"
-      variant="ghost"
-      fontSize="lg"
-      color="#245B41"
-      onClick={onToggle}
-      px={0}
-      justifyContent="flex-start"
-    >
-      Contact
-    </Button>
+             <Button
+             as={RouterLink}
+             to="/contact"
+             variant="ghost"
+            fontSize="lg"
+            color="#245B41"
+            onClick={onToggle}
+            px={0}
+            justifyContent="flex-start"
+            >
+            Contact
+           </Button>
   </Stack>
 </Collapse>
         </Flex>
