@@ -100,7 +100,7 @@ export const AddEventPage = () => {
 
   return (
     <Container maxW="600px">
-      <Heading mb={6}>Add New Event</Heading>
+      <Heading my={{base: 6, md: 10}}>Add New Event</Heading>
 
       {error && <Text color="red.500" mb={2}>{error}</Text>}
       {success && <Text color="green.500" mb={2}>{success}</Text>}
@@ -209,11 +209,10 @@ export const AddEventPage = () => {
               value={formData.categories}
               onChange={handleChange}
               focusBorderColor="#b8bfb8"
-              mb={5}
             />
           </FormControl>
 
-          <Button type="submit" width="full">
+          <Button mt={{base: 3, md: 5}} mb={{base: 8, md: 10}} type="submit" width="60%">
             Submit Event
           </Button>
         </VStack>
