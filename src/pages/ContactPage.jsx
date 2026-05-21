@@ -18,7 +18,7 @@ const ContactPage = () => {
   return (
     <Box minH="100vh" py={{ base: 6, md: 10}}>
       <Container maxW="6xl">
-        <Stack spacing={10} textAlign="left" mb={10}>
+        <Stack spacing={{ base: 5, md: 10}} textAlign="left" mb={10}>
           <Heading as="h1">Contact Us</Heading>
           <Text color="gray.600">
             We'd love to hear from you. Feel free to reach out with questions, feedback, or just to say hi!
@@ -46,7 +46,7 @@ const ContactPage = () => {
           </Box>
 
           {/* Contact Info */}
-          <Box p={8}>
+          <Box pb={{ base: 5, md: 10}} px={{ base: 6, md: 8}}  >
             <Stack spacing={6} fontSize="lg" color="gray.700">
               <Stack direction="row" align="center">
                 <Icon as={MdLocationOn} boxSize={6} color="customGreen.500" />

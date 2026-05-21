@@ -212,7 +212,7 @@ export const AddEventPage = () => {
             />
           </FormControl>
 
-          <Button mt={{base: 3, md: 5}} mb={{base: 8, md: 10}} type="submit" width="60%">
+          <Button mt={{base: 3, md: 5}} mb={{base: 8, md: 14}} type="submit" width="60%">
             Submit Event
           </Button>
         </VStack>
